@@ -5,11 +5,11 @@ on:
     branches: [ master ]
   schedule:
     # Runs at 12am IST
-    - cron: '30 18 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   update-readme:
-    name: Update Readme with Metrics
+    name: Update Readme with metrics
     runs-on: ubuntu-latest
     steps:
       - uses: imsenthur/waka-readme-stats@master
