@@ -1,58 +1,12 @@
 ![cubes](https://github.com/imsenthur/imsenthur/blob/master/cubes.gif)
 
 <!--START_SECTION:waka-->
-![Profile Views](http://img.shields.io/badge/Profile%20Views-19-blue)
-
-**🐱 My Github Data** 
-
-> 🏆 321 Contributions in the Year 2020
- > 
-> 📦 396.4 kB Used in Github's Storage 
- > 
-> 🚫 Not Opted to Hire
- > 
-> 📜 49 Public Repositories
- > 
-> 🔑 8 Private Repositories 
-
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning    50 commits     ████░░░░░░░░░░░░░░░░░░░░░   15.58% 
-🌆 Daytime    95 commits     ███████░░░░░░░░░░░░░░░░░░   29.6% 
-🌃 Evening    99 commits     ███████░░░░░░░░░░░░░░░░░░   30.84% 
-🌙 Night      77 commits     ██████░░░░░░░░░░░░░░░░░░░   23.99%
-
-```
-📅 **I'm Most Productive on Thursday** 
-
-```text
-Monday       42 commits     ███░░░░░░░░░░░░░░░░░░░░░░   13.08% 
-Tuesday      35 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   10.9% 
-Wednesday    48 commits     ███░░░░░░░░░░░░░░░░░░░░░░   14.95% 
-Thursday     72 commits     █████░░░░░░░░░░░░░░░░░░░░   22.43% 
-Friday       63 commits     █████░░░░░░░░░░░░░░░░░░░░   19.63% 
-Saturday     30 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   9.35% 
-Sunday       31 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   9.66%
-
-```
-
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-555922%20lines%20of%20code-blue)
 
 📊 **This Week I Spent My Time On** 
 
 ```text
-⌚︎ Time Zone: Asia/Kolkata
-
 💬 Programming Languages: 
-No Activity Tracked This Week
-
-🔥 Editors: 
-No Activity Tracked This Week
-
-🐱‍💻 Projects: 
-No Activity Tracked This Week
-
-💻 Operating System: 
 No Activity Tracked This Week
 
 ```
@@ -68,10 +22,6 @@ C#                       2 repos             █░░░░░░░░░░�
 
 ```
 
-
-**Timeline**
-
-![Chart not found](https://github.com/imsenthur/imsenthur/blob/master/charts/bar_graph.png) 
 
 
 <!--END_SECTION:waka-->
