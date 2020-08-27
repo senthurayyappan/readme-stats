@@ -2,7 +2,7 @@
 
 <!--START_SECTION:waka-->
 ![Profile Views](http://img.shields.io/badge/Profile%20views-190-blue)
-![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-556748%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-534613%20lines%20of%20code-blue)
 ![Blender](https://img.shields.io/badge/-Blender-orange)
 ![Python](https://img.shields.io/badge/-Python-blue)
 ![TensorFlow](https://img.shields.io/badge/-TensorFlow-ff8c00)
@@ -12,16 +12,18 @@
 ![Solidworks](https://img.shields.io/badge/-Solidworks-red)
 ```text
 Languages: 
-Python                   2 hrs 38 mins       ██████████████░░░░░░░░░░░   56.59% 
-Markdown                 1 hr 18 mins        ███████░░░░░░░░░░░░░░░░░░   28.08% 
-YAML                     38 mins             ███░░░░░░░░░░░░░░░░░░░░░░   13.9% 
-JSON                     3 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   1.42% 
-Git Config               0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.01%
+Python                   7 hrs 40 mins       ███████████████████░░░░░░   75.71% 
+Markdown                 1 hr 44 mins        ████░░░░░░░░░░░░░░░░░░░░░   17.21% 
+YAML                     38 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   6.38% 
+JSON                     3 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.65% 
+Git Config               0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.05%
 
 Projects: 
-import-G-code            2 hrs 46 mins       ███████████████░░░░░░░░░░   59.62% 
-imsenthur                1 hr 4 mins         █████░░░░░░░░░░░░░░░░░░░░   23.06% 
-waka-readme-stats        48 mins             ████░░░░░░░░░░░░░░░░░░░░░   17.31%
+anton                    4 hrs 18 mins       ██████████░░░░░░░░░░░░░░░   42.55% 
+import-G-code            2 hrs 47 mins       ███████░░░░░░░░░░░░░░░░░░   27.54% 
+imsenthur                1 hr 4 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   10.59% 
+blendmsh                 1 hr 1 min          ██░░░░░░░░░░░░░░░░░░░░░░░   10.18% 
+waka-readme-stats        48 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   7.95%
 ```
 
 
