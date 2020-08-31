@@ -1,8 +1,8 @@
 ![cubes](https://github.com/imsenthur/imsenthur/blob/master/cubes.gif)
 
 <!--START_SECTION:waka-->
-![Profile Views](http://img.shields.io/badge/Profile%20views-193-blue)
-![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-560757%20lines%20of%20code-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20views-203-blue)
+![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-558226%20lines%20of%20code-blue)
 ![Blender](https://img.shields.io/badge/-Blender-orange)
 ![Python](https://img.shields.io/badge/-Python-blue)
 ![TensorFlow](https://img.shields.io/badge/-TensorFlow-ff8c00)
@@ -12,18 +12,18 @@
 ![Solidworks](https://img.shields.io/badge/-Solidworks-red)
 ```text
 Languages: 
-Python                   20 hrs 37 mins      ██████████████████░░░░░░░   73.46% 
-reStructuredText         4 hrs 48 mins       ████░░░░░░░░░░░░░░░░░░░░░   17.11% 
-Markdown                 1 hr 55 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   6.84% 
-YAML                     38 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.3% 
-JSON                     3 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.23%
+Python                   22 hrs 43 mins      ███████████████░░░░░░░░░░   61.08% 
+reStructuredText         9 hrs 53 mins       ██████░░░░░░░░░░░░░░░░░░░   26.59% 
+Markdown                 2 hrs 42 mins       █░░░░░░░░░░░░░░░░░░░░░░░░   7.27% 
+Text                     1 hr 5 mins         ░░░░░░░░░░░░░░░░░░░░░░░░░   2.92% 
+YAML                     42 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   1.88%
 
 Projects: 
-anton                    22 hrs 4 mins       ███████████████████░░░░░░   78.63% 
-import-G-code            2 hrs 47 mins       ██░░░░░░░░░░░░░░░░░░░░░░░   9.96% 
-imsenthur                1 hr 4 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   3.82% 
-blendmsh                 1 hr 4 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   3.82% 
-waka-readme-stats        48 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.87%
+anton                    31 hrs 13 mins      █████████████████████░░░░   83.89% 
+import-G-code            2 hrs 47 mins       ██░░░░░░░░░░░░░░░░░░░░░░░   7.51% 
+imsenthur                1 hr 4 mins         ░░░░░░░░░░░░░░░░░░░░░░░░░   2.88% 
+blendmsh                 1 hr 4 mins         ░░░░░░░░░░░░░░░░░░░░░░░░░   2.88% 
+waka-readme-stats        48 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.17%
 ```
 
 
