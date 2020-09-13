@@ -2,7 +2,7 @@
 
 <!--START_SECTION:waka-->
 ![Profile Views](http://img.shields.io/badge/Profile%20views-22-blue)
-![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-921900%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-920940%20lines%20of%20code-blue)
 ![Blender](https://img.shields.io/badge/-Blender-orange)
 ![Python](https://img.shields.io/badge/-Python-blue)
 ![TensorFlow](https://img.shields.io/badge/-TensorFlow-ff8c00)
