@@ -1,8 +1,8 @@
 ![cubes](https://github.com/imsenthur/imsenthur/blob/master/cubes.gif)
 
 <!--START_SECTION:waka-->
-![Profile Views](http://img.shields.io/badge/Profile%20views-12-blue)
-![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-920940%20lines%20of%20code-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20views-10-blue)
+![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-770234%20lines%20of%20code-blue)
 ![Blender](https://img.shields.io/badge/-Blender-orange)
 ![Python](https://img.shields.io/badge/-Python-blue)
 ![TensorFlow](https://img.shields.io/badge/-TensorFlow-ff8c00)
@@ -12,18 +12,18 @@
 ![Solidworks](https://img.shields.io/badge/-Solidworks-red)
 ```text
 Languages: 
-Python                   13 hrs 32 mins      ████████████░░░░░░░░░░░░░   48.97% 
-C++                      8 hrs 7 mins        ███████░░░░░░░░░░░░░░░░░░   29.39% 
-Bash                     2 hrs 17 mins       ██░░░░░░░░░░░░░░░░░░░░░░░   8.29% 
-Makefile                 59 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   3.6% 
-Text                     57 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   3.46%
+Python                   13 hrs 43 mins      ██████████░░░░░░░░░░░░░░░   41.94% 
+C++                      13 hrs 18 mins      ██████████░░░░░░░░░░░░░░░   40.68% 
+Bash                     2 hrs 17 mins       █░░░░░░░░░░░░░░░░░░░░░░░░   7.01% 
+Other                    1 hr 14 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   3.78% 
+Makefile                 58 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.98%
 
 Projects: 
-spgrid_topo_opt          17 hrs 51 mins      ████████████████░░░░░░░░░   64.57% 
-Unknown Project          6 hrs 15 mins       █████░░░░░░░░░░░░░░░░░░░░   22.6% 
-anton                    57 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   3.46% 
-openmdao_TopOpt          44 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.7% 
-OpenLSTO                 43 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.6%
+spgrid_topo_opt          24 hrs 58 mins      ███████████████████░░░░░░   76.34% 
+Unknown Project          6 hrs 53 mins       █████░░░░░░░░░░░░░░░░░░░░   21.05% 
+taichi                   34 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   1.76% 
+anton                    10 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   0.55% 
+implicit-surfaces        5 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.28%
 ```
 
 
