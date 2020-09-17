@@ -2,7 +2,7 @@
 
 <!--START_SECTION:waka-->
 ![Profile Views](http://img.shields.io/badge/Profile%20views-11-blue)
-![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-769222%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-729231%20lines%20of%20code-blue)
 ![Blender](https://img.shields.io/badge/-Blender-orange)
 ![Python](https://img.shields.io/badge/-Python-blue)
 ![TensorFlow](https://img.shields.io/badge/-TensorFlow-ff8c00)
@@ -12,16 +12,17 @@
 ![Solidworks](https://img.shields.io/badge/-Solidworks-red)
 ```text
 Languages: 
-C++                      19 hrs 58 mins      █████████████░░░░░░░░░░░░   53.7% 
-Python                   14 hrs 34 mins      █████████░░░░░░░░░░░░░░░░   39.17% 
-Other                    1 hr 30 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   4.05% 
-Text                     1 hr 2 mins         ░░░░░░░░░░░░░░░░░░░░░░░░░   2.81% 
-Makefile                 5 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.23%
+C++                      21 hrs 38 mins      █████████████░░░░░░░░░░░░   53.44% 
+Python                   16 hrs 6 mins       ██████████░░░░░░░░░░░░░░░   39.79% 
+Other                    1 hr 48 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   4.47% 
+Text                     55 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   2.27% 
+C                        0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.02%
 
 Projects: 
-spgrid_topo_opt          32 hrs 13 mins      █████████████████████░░░░   86.62% 
-Unknown Project          4 hrs 26 mins       ███░░░░░░░░░░░░░░░░░░░░░░   11.96% 
-taichi                   31 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   1.42%
+spgrid_topo_opt          34 hrs 39 mins      █████████████████████░░░░   85.6% 
+Unknown Project          4 hrs 26 mins       ██░░░░░░░░░░░░░░░░░░░░░░░   10.99% 
+anton                    1 hr 1 min          ░░░░░░░░░░░░░░░░░░░░░░░░░   2.55% 
+taichi                   20 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   0.86%
 ```
 
 
