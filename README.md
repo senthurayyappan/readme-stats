@@ -2,7 +2,7 @@
 
 <!--START_SECTION:waka-->
 ![Profile Views](http://img.shields.io/badge/Profile%20views-7-blue)
-![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-769346%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20%22Hello%2C%20World%21%22%2C%20I%27ve%20written-770539%20lines%20of%20code-blue)
 ![Blender](https://img.shields.io/badge/-Blender-orange)
 ![Python](https://img.shields.io/badge/-Python-blue)
 ![TensorFlow](https://img.shields.io/badge/-TensorFlow-ff8c00)
@@ -12,17 +12,16 @@
 ![Solidworks](https://img.shields.io/badge/-Solidworks-red)
 ```text
 Languages: 
-Python                   30 hrs 56 mins      █████████████████░░░░░░░░   68.09% 
-C++                      12 hrs 59 mins      ███████░░░░░░░░░░░░░░░░░░   28.59% 
-Other                    1 hr 23 mins        ░░░░░░░░░░░░░░░░░░░░░░░░░   3.05% 
-Text                     6 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.22% 
-Git Config               1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   0.04%
+Python                   30 hrs 2 mins       ████████████████████░░░░░   79.93% 
+C++                      6 hrs 24 mins       ████░░░░░░░░░░░░░░░░░░░░░   17.05% 
+Other                    1 hr 6 mins         ░░░░░░░░░░░░░░░░░░░░░░░░░   2.96% 
+Git Config               0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.04% 
+Text                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.03%
 
 Projects: 
-anton                    25 hrs 14 mins      ██████████████░░░░░░░░░░░   55.55% 
-spgrid_topo_opt          19 hrs 36 mins      ██████████░░░░░░░░░░░░░░░   43.14% 
-Unknown Project          29 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   1.1% 
-taichi                   5 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.2%
+anton                    26 hrs 2 mins       █████████████████░░░░░░░░   69.29% 
+spgrid_topo_opt          11 hrs 2 mins       ███████░░░░░░░░░░░░░░░░░░   29.38% 
+Unknown Project          29 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   1.33%
 ```
 
 
