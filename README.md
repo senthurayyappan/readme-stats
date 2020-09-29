@@ -1,7 +1,6 @@
 ![cubes](https://github.com/imsenthur/imsenthur/blob/master/cubes.gif)
 
 <!--START_SECTION:waka-->
-
 ```text
 Languages: 
 C++                      8 hrs 25 mins       ██████████████░░░░░░░░░░░   56.76% 
