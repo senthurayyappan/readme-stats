@@ -1,4 +1,4 @@
-![cubes](https://github.com/imsenthur/imsenthur/blob/master/cubes.gif)
+![cubes](https://github.com/imsenthur/imsenthur/blob/master/GE.gif)
 
 <!--START_SECTION:waka-->
 
