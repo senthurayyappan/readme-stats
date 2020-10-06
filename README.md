@@ -3,18 +3,18 @@
 <!--START_SECTION:waka-->
 ```text
 Languages: 
-Python                   5 hrs 16 mins       ██████████████░░░░░░░░░░░   57.43% 
-Markdown                 1 hr 54 mins        █████░░░░░░░░░░░░░░░░░░░░   20.68% 
-C++                      51 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   9.37% 
-Other                    33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   5.99% 
-reStructuredText         32 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   5.94%
+Python                   2 hrs 33 mins       ██████████░░░░░░░░░░░░░░░   39.52% 
+Markdown                 1 hr 54 mins        ███████░░░░░░░░░░░░░░░░░░   29.41% 
+C++                      51 mins             ███░░░░░░░░░░░░░░░░░░░░░░   13.32% 
+Other                    32 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   8.46% 
+reStructuredText         32 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   8.45%
 
 Projects: 
-anton                    6 hrs 17 mins       █████████████████░░░░░░░░   68.48% 
-imsenthur.github.io      1 hr 10 mins        ███░░░░░░░░░░░░░░░░░░░░░░   12.78% 
-spgrid_topo_opt          1 hr 4 mins         ███░░░░░░░░░░░░░░░░░░░░░░   11.64% 
-Unknown Project          32 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   5.97% 
-imsenthur                4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.77%
+anton                    3 hrs 34 mins       █████████████░░░░░░░░░░░░   55.22% 
+imsenthur.github.io      1 hr 10 mins        ████░░░░░░░░░░░░░░░░░░░░░   18.18% 
+spgrid_topo_opt          1 hr 4 mins         ████░░░░░░░░░░░░░░░░░░░░░   16.56% 
+Unknown Project          32 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   8.43% 
+imsenthur                4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   1.09%
 ```
 
 
