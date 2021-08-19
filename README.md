@@ -1,1 +1,1 @@
-![cubes](https://github.com/imsenthur/imsenthur/blob/master/GE.gif)
+![osl](https://github.com/homebrew-bionics/oslsim/blob/master/oslsim_banner.gif)
