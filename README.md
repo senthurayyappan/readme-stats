@@ -1,4 +1,4 @@
-![osl](https://github.com/homebrew-bionics/oslsim/blob/master/oslsim_banner.gif)
+![osl](https://github.com/senthurayyappan/senthurayyappan/blob/156ec8bb5111b774835c0b3643ca6afc2aaa4623/oslsim.gif)
 
 <div align="center">
 
