@@ -4,7 +4,7 @@ const github = require('@actions/github');
 async function run() {
   try {
     // Get inputs
-    const apiKey = core.getInput('wakapi-api-key');
+    const apiKey = core.getInput('wakapi-token');
     const interval = core.getInput('interval', { required: false }) || '7_days';
 
     // Fetch Wakapi statistics
