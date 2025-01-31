@@ -4,25 +4,26 @@ const github = require('@actions/github');
 async function run() {
   try {
     // Get inputs
-    const token = core.getInput('github-token');
-    const owner = core.getInput('owner');
-    const repo = core.getInput('repo');
+    const apiKey = core.getInput('wakapi-api-key');
+    const interval = core.getInput('interval', { required: false }) || '7_days';
 
-    // Create Octokit client
-    const octokit = github.getOctokit(token);
-
-    // Fetch repository statistics
-    const response = await octokit.request('GET /repos/{owner}/{repo}/stats/code_frequency', {
-      owner: owner,
-      repo: repo,
+    // Fetch Wakapi statistics
+    const response = await fetch('https://wakapi.dev/api/summary?interval=' + interval, {
       headers: {
-        'X-GitHub-Api-Version': '2022-11-28'
+        'accept': 'application/json',
+        'Authorization': apiKey
       }
     });
 
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
     // Set the output
-    core.setOutput("stats", JSON.stringify(response.data));
-    console.log('Successfully fetched repository statistics');
+    core.setOutput("stats", JSON.stringify(data));
+    console.log('Successfully fetched Wakapi statistics');
 
   } catch (error) {
     core.setFailed(error.message);

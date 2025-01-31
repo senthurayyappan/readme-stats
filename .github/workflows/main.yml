@@ -8,9 +8,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Get Repo Stats
+      - name: Get Coding Stats
         uses: ./
         with:
+          wakapi-token: ${{ secrets.WAKAPI_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
