@@ -1,4 +1,16 @@
-![osl](https://github.com/senthurayyappan/senthurayyappan/blob/156ec8bb5111b774835c0b3643ca6afc2aaa4623/oslsim.gif)
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg">
+    <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-green.svg">
+    <img alt="GitHub contribution graph" src="profile-3d-contrib/profile-green.svg">
+  </picture>
+</div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/senthurayyappan/senthurayyappan/main/data/wakapi-projects-7_days.svg" alt="Projects Breakdown" width="800">
+  <img src="https://raw.githubusercontent.com/senthurayyappan/senthurayyappan/main/data/wakapi-languages-7_days.svg" alt="Languages Distribution" width="400">
+  <img src="https://raw.githubusercontent.com/senthurayyappan/senthurayyappan/main/data/wakapi-os-7_days.svg" alt="Operating Systems" width="400">
+</div>
 
 <div align="center">
 

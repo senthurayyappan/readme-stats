@@ -29915,6 +29915,22 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
+/***/ 9678:
+/***/ ((module) => {
+
+module.exports = eval("require")("d3");
+
+
+/***/ }),
+
+/***/ 3383:
+/***/ ((module) => {
+
+module.exports = eval("require")("d3-node");
+
+
+/***/ }),
+
 /***/ 2613:
 /***/ ((module) => {
 
@@ -31829,11 +31845,125 @@ module.exports = parseParams
 var __webpack_exports__ = {};
 const core = __nccwpck_require__(7484);
 const github = __nccwpck_require__(3228);
+const fs = (__nccwpck_require__(9896).promises);
+const path = __nccwpck_require__(6928);
+const D3Node = __nccwpck_require__(3383);
+const d3 = __nccwpck_require__(9678);
+
+async function generatePlots(data, dataDir, interval) {
+  // Modern color palette
+  const colors = [
+    '#2563eb', // blue
+    '#db2777', // pink
+    '#16a34a', // green
+    '#ea580c', // orange
+    '#9333ea', // purple
+    '#0891b2', // cyan
+    '#4f46e5', // indigo
+    '#c026d3', // fuchsia
+    '#059669', // emerald
+    '#dc2626'  // red
+  ];
+
+  // Helper function to create SVG
+  const createChart = (width = 800, height = 500) => {
+    const d3n = new D3Node();
+    const svg = d3n.createSVG(width, height)
+      .append('g')
+      .attr('transform', `translate(40, 20)`); // Add margins
+
+    return { svg, d3n };
+  };
+
+  // Generate bar chart for projects
+  const generateBarChart = (data, width = 800, height = 500) => {
+    const { svg, d3n } = createChart(width, height);
+    const margin = { top: 20, right: 20, bottom: 50, left: 60 };
+    const chartWidth = width - margin.left - margin.right;
+    const chartHeight = height - margin.top - margin.bottom;
+
+    const x = d3.scaleBand()
+      .range([0, chartWidth])
+      .padding(0.2);
+
+    const y = d3.scaleLinear()
+      .range([chartHeight, 0]);
+
+    x.domain(data.map(d => d.key));
+    y.domain([0, d3.max(data, d => d.total / 3600)]);
+
+    // Add bars
+    svg.selectAll('.bar')
+      .data(data)
+      .enter().append('rect')
+      .attr('class', 'bar')
+      .attr('x', d => x(d.key))
+      .attr('width', x.bandwidth())
+      .attr('y', d => y(d.total / 3600))
+      .attr('height', d => chartHeight - y(d.total / 3600))
+      .attr('fill', colors[0])
+      .attr('rx', 6)
+      .attr('ry', 6);
+
+    // Add axes
+    svg.append('g')
+      .attr('transform', `translate(0,${chartHeight})`)
+      .call(d3.axisBottom(x))
+      .selectAll('text')
+      .attr('transform', 'rotate(-45)')
+      .style('text-anchor', 'end');
+
+    svg.append('g')
+      .call(d3.axisLeft(y).ticks(5));
+
+    return d3n;
+  };
+
+  // Generate pie chart for languages
+  const generatePieChart = (data, width = 800, height = 500) => {
+    const { svg, d3n } = createChart(width, height);
+    const radius = Math.min(width, height) / 2 - 40;
+
+    const pie = d3.pie()
+      .value(d => d.total);
+
+    const arc = d3.arc()
+      .innerRadius(0)
+      .outerRadius(radius);
+
+    const arcs = svg.selectAll('.arc')
+      .data(pie(data))
+      .enter()
+      .append('g')
+      .attr('transform', `translate(${width/2}, ${height/2})`);
+
+    arcs.append('path')
+      .attr('d', arc)
+      .attr('fill', (d, i) => colors[i % colors.length]);
+
+    return d3n;
+  };
+
+  // Generate and save plots
+  const plots = {
+    'projects': () => generateBarChart(data.projects),
+    'languages': () => generatePieChart(data.languages),
+    'os': () => generateBarChart(data.operating_systems)
+  };
+
+  for (const [name, generatePlot] of Object.entries(plots)) {
+    const d3n = generatePlot();
+    await fs.writeFile(
+      path.join(dataDir, `wakapi-${name}-${interval}.svg`),
+      d3n.svgString()
+    );
+  }
+}
 
 async function run() {
   try {
     // Get inputs
-    const apiKey = core.getInput('wakapi-token');
+    const apiKey = core.getInput('wakapi-token') || 'f02b0526-4c87-4fb5-8e2c-1a65283ac710';
     const base64ApiKey = Buffer.from(apiKey).toString('base64');
 
     const interval = core.getInput('interval', { required: false }) || '7_days';
@@ -31852,6 +31982,20 @@ async function run() {
     }
 
     const data = await response.json();
+
+    // Create data directory if it doesn't exist
+    const dataDir = __nccwpck_require__.ab + "data";
+    await fs.mkdir(__nccwpck_require__.ab + "data", { recursive: true });
+
+    // Save data to JSON file
+    const fileName = `wakapi-stats-${interval}.json`;
+    const filePath = __nccwpck_require__.ab + "data/" + fileName;
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+    console.log(`Statistics saved to ${filePath}`);
+
+    // Generate and save plots
+    await generatePlots(data, __nccwpck_require__.ab + "data", interval);
+    console.log('Plots generated and saved');
 
     // Set the output
     core.setOutput("stats", JSON.stringify(data));

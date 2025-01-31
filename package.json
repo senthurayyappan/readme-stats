@@ -3,7 +3,7 @@
   "description": "GitHub Action to fetch coding statistics",
   "main": "index.js",
   "scripts": {
-    "build": "ncc build index.js -o dist",
+    "build": "ncc build index.js -o dist --license licenses.txt",
     "prepare": "npm run build"
   },
   "keywords": [],
@@ -12,6 +12,8 @@
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0",
+    "d3": "^7.9.0",
+    "jsdom": "^26.0.0",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
