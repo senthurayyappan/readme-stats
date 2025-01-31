@@ -1,0 +1,16 @@
+{
+  "name": "senthurayyappan",
+  "version": "1.0.0",
+  "description": "![osl](https://github.com/senthurayyappan/senthurayyappan/blob/156ec8bb5111b774835c0b3643ca6afc2aaa4623/oslsim.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  }
+}
