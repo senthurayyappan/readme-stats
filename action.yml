@@ -1,18 +1,16 @@
-name: 'Repo Stats Action'
-description: 'Fetch repository code frequency statistics'
+name: 'Wakapi Stats Action'
+description: 'Fetch coding statistics from Wakapi'
 inputs:
-  github-token:
-    description: 'GitHub token for API authentication'
+  wakapi-token:
+    description: 'Wakapi API token'
     required: true
-  owner:
-    description: 'Repository owner'
-    required: true
-  repo:
-    description: 'Repository name'
-    required: true
+  interval:
+    description: 'Time interval for stats (e.g. 7_days, 30_days)'
+    required: false
+    default: '7_days'
 outputs:
   stats:
-    description: 'Repository code frequency statistics'
+    description: 'Wakapi statistics in JSON format'
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: 'node16'
+  main: 'index.js'
