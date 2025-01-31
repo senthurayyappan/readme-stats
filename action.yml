@@ -1,13 +1,18 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Repo Stats Action'
+description: 'Fetch repository code frequency statistics'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  github-token:
+    description: 'GitHub token for API authentication'
     required: true
-    default: 'World'
+  owner:
+    description: 'Repository owner'
+    required: true
+  repo:
+    description: 'Repository name'
+    required: true
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  stats:
+    description: 'Repository code frequency statistics'
 runs:
   using: 'node20'
   main: 'dist/index.js'
