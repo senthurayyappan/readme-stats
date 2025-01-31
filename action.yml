@@ -13,4 +13,4 @@ outputs:
     description: 'Wakapi statistics in JSON format'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'

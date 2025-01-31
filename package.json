@@ -1,16 +1,20 @@
 {
-  "name": "senthurayyappan",
   "version": "1.0.0",
-  "description": "![osl](https://github.com/senthurayyappan/senthurayyappan/blob/156ec8bb5111b774835c0b3643ca6afc2aaa4623/oslsim.gif)",
+  "description": "GitHub Action to fetch coding statistics",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ncc build index.js -o dist",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "@actions/github": "^6.0.0"
+    "@actions/github": "^6.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
   }
 }
