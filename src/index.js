@@ -8,9 +8,9 @@ const { config } = require('./config');
 
 async function run() {
   try {
-    // Get inputs - fallback to config for local development
-    const apiKey = core.getInput('wakapi-token') || config.wakapiToken;
-    const interval = core.getInput('interval') || config.interval;
+    // Get inputs from environment variables with fallback to config
+    const apiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
+    const interval = process.env.INTERVAL || config.interval;
 
     // Fetch data
     const data = await fetchWakapiStats(apiKey, interval);
@@ -41,8 +41,8 @@ async function run() {
     console.log('Successfully fetched Wakapi statistics and generated charts');
 
   } catch (error) {
-    core.setFailed(error.message);
     console.error(error);
+    process.exit(1);
   }
 }
 

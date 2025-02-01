@@ -1,4 +1,4 @@
-name: Run Repo Stats Action
+name: Update Wakapi Stats
 on:
   push:
     branches: [ main ]
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:  # Allow manual triggers
 
 jobs:
-  repo_stats_job:
+  update_stats:
     runs-on: ubuntu-latest
     # Skip if the push was from github-actions bot
     if: github.actor != 'github-actions[bot]'
@@ -32,14 +32,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Build
-        run: npm run build
-      
-      - name: Get Wakapi Coding Stats
-        uses: ./
-        with:
-          wakapi-token: ${{ secrets.WAKAPI_TOKEN }}
-          interval: 7_days
+      - name: Generate Stats
+        run: node src/index.js
+        env:
+          WAKAPI_TOKEN: ${{ secrets.WAKAPI_TOKEN }}
+          INTERVAL: '7_days'
 
       - name: Commit and push if changed
         run: |
