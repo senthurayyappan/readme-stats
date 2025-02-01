@@ -13,4 +13,9 @@ outputs:
     description: 'Wakapi statistics in JSON format'
 runs:
   using: 'node16'
+  pre: 'dist/setup.js'
   main: 'dist/index.js'
+  post: 'dist/cleanup.js'
+branding:
+  icon: 'clock'
+  color: 'blue'

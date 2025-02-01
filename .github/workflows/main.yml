@@ -1,15 +1,45 @@
 name: Run Repo Stats Action
-on: [push]  # This will run the action on every push
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'data/**'  # Ignore changes to data directory
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  workflow_dispatch:  # Allow manual triggers
 
 jobs:
   repo_stats_job:
     runs-on: ubuntu-latest
+    # Skip if the push was from github-actions bot
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build
+        run: npm run build
       
       - name: Get Wakapi Coding Stats
         uses: ./
         with:
           wakapi-token: ${{ secrets.WAKAPI_TOKEN }}
           interval: 7_days
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add data/
+          git commit -m "Update stats" || exit 0
+          git push

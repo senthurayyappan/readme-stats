@@ -8,3 +8,16 @@
   <a href="senthurayyappan@gmail.com"><img alt="Gmail" src="https://img.shields.io/badge/-Gmail-red"></a>
   
 </div>
+
+## Coding Statistics
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="./data/projects-chart.png" alt="Time Spent by Project" width="100%">
+    </td>
+    <td width="50%">
+      <img src="./data/languages-chart.png" alt="Time Spent by Language" width="100%">
+    </td>
+  </tr>
+</table>
