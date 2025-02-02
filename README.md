@@ -1,14 +1,14 @@
-<table>
+<table cellspacing="0" cellpadding="0">
   <tr>
-    <td width="50%" align="center">
-      <h4>Projects</h4>
-      <img src="/../../raw/data/data/projects-radar.svg" alt="Time Spent by Project" width="100%" style="border-radius: 10px;">
-      <img src="/../../raw/data/data/projects-bar.svg" alt="Time Spent by Project (Bar)" width="100%" style="border-radius: 10px;">
+    <td width="50%" align="center" style="padding: 0;">
+      <h4 style="margin: 8px 0;">Projects</h4>
+      <img src="/../../raw/data/data/projects-radar.svg" alt="Time Spent by Project" width="100%" style="border-radius: 10px; margin: 4px 0;">
+      <img src="/../../raw/data/data/projects-bar.svg" alt="Time Spent by Project (Bar)" width="100%" style="border-radius: 10px; margin: 4px 0;">
     </td>
-    <td width="50%" align="center">
-      <h4>Programming Languages</h4>
-      <img src="/../../raw/data/data/languages-radar.svg" alt="Time Spent by Language" width="100%" style="border-radius: 10px;">
-      <img src="/../../raw/data/data/languages-bar.svg" alt="Time Spent by Language (Bar)" width="100%" style="border-radius: 10px;">
+    <td width="50%" align="center" style="padding: 0;">
+      <h4 style="margin: 8px 0;">Programming Languages</h4>
+      <img src="/../../raw/data/data/languages-radar.svg" alt="Time Spent by Language" width="100%" style="border-radius: 10px; margin: 4px 0;">
+      <img src="/../../raw/data/data/languages-bar.svg" alt="Time Spent by Language (Bar)" width="100%" style="border-radius: 10px; margin: 4px 0;">
     </td>
   </tr>
 </table>
