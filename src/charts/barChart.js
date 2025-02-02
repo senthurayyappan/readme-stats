@@ -69,6 +69,19 @@ exports.createBarChart = async function(datasets, field) {
             "sort": {"field": "category"}
           }
         ]
+      },
+      {
+        "name": "aggregated",
+        "source": "table",
+        "transform": [
+          {
+            "type": "aggregate",
+            "groupby": ["name"],
+            "fields": ["value"],
+            "ops": ["sum"],
+            "as": ["total"]
+          }
+        ]
       }
     ],
     "scales": [
@@ -161,7 +174,22 @@ exports.createBarChart = async function(datasets, field) {
             "fill": {"value": config.labelColor},
             "align": {"value": "left"},
             "baseline": {"value": "middle"}
-
+          }
+        }
+      },
+      {
+        "type": "text",
+        "from": {"data": "aggregated"},
+        "encode": {
+          "enter": {
+            "y": {"scale": "name", "field": "name", "band": 0.5},
+            "x": {"scale": "value", "field": "total", "offset": 5},
+            "text": {"signal": "format(datum.total / 3600, '~d') + 'h'"},
+            "fontSize": {"value": config.fontSize},
+            "font": {"value": config.fontFamily},
+            "fill": {"value": config.labelColor},
+            "align": {"value": "left"},
+            "baseline": {"value": "middle"}
           }
         }
       }

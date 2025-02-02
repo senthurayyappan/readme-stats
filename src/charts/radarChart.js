@@ -47,7 +47,7 @@ exports.createRadarChart = async function(datasets, field) {
     "description": "Radar chart showing coding time across different time periods",
     "width": config.width,
     "height": config.height,
-    "padding": 100,
+    "padding": 80,
     "autosize": {"type": "none", "contains": "padding"},
 
     "signals": [
