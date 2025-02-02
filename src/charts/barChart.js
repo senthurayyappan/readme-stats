@@ -1,5 +1,5 @@
 const vega = require('vega');
-const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR } = require('./configs');
+const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR, FONT_FAMILY, FONT_COLOR, LABEL_COLOR, FONT_SIZE } = require('./configs');
 
 exports.createBarChart = async function(datasets, field) {
 
@@ -117,12 +117,13 @@ exports.createBarChart = async function(datasets, field) {
         "orient": "bottom", 
         "scale": "value", 
         "zindex": 1,
-        "tickColor": config.fontColor,
-        "labelColor": config.fontColor,
-        "labelFont": config.fontFamily,
+        "tickColor": FONT_COLOR,
+        "labelColor": FONT_COLOR,
+        "labelFont": FONT_FAMILY,
         "labelFontSize": 10,
         "format": "s",
         "formatType": "number",
+
 
         "encode": {
           "labels": {
@@ -139,11 +140,12 @@ exports.createBarChart = async function(datasets, field) {
         "fill": "color",
         "orient": "bottom",
         "direction": "horizontal",
-        "labelColor": config.fontColor,
-        "labelFont": config.fontFamily,
-        "labelFontSize": config.fontSize,
+        "labelColor": FONT_COLOR,
+        "labelFont": FONT_FAMILY,
+        "labelFontSize": FONT_SIZE,
         "titlePadding": 5,
         "columns": 2
+
       }
     ],
 
@@ -169,11 +171,12 @@ exports.createBarChart = async function(datasets, field) {
             "y": {"scale": "name", "field": "name", "band": 0.5},
             "x": {"value": 5},
             "text": {"field": "name"},
-            "fontSize": {"value": config.fontSize},
-            "font": {"value": config.fontFamily},
-            "fill": {"value": config.labelColor},
+            "fontSize": {"value": FONT_SIZE},
+            "font": {"value": FONT_FAMILY},
+            "fill": {"value": LABEL_COLOR},
             "align": {"value": "left"},
             "baseline": {"value": "middle"}
+
           }
         }
       },
@@ -185,11 +188,12 @@ exports.createBarChart = async function(datasets, field) {
             "y": {"scale": "name", "field": "name", "band": 0.5},
             "x": {"scale": "value", "field": "total", "offset": 5},
             "text": {"signal": "format(datum.total / 3600, '~d') + 'h'"},
-            "fontSize": {"value": config.fontSize},
-            "font": {"value": config.fontFamily},
-            "fill": {"value": config.labelColor},
+            "fontSize": {"value": FONT_SIZE},
+            "font": {"value": FONT_FAMILY},
+            "fill": {"value": LABEL_COLOR},
             "align": {"value": "left"},
             "baseline": {"value": "middle"}
+
           }
         }
       }

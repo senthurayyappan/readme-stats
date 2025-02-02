@@ -5,13 +5,14 @@ const { ensureDataDir, saveJson, saveChart } = require('./utils/fileSystem');
 const { createRadarChart } = require('./charts/radarChart');
 const { createBarChart } = require('./charts/barChart');
 const { config } = require('./config');
+const { createStatsCard } = require('./charts/statsCard');
 
 async function run() {
   try {
     // Get inputs from environment variables with fallback to config
     const apiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
     const username = process.env.WAKAPI_USERNAME || config.wakapiUsername;
-    const intervals = ['all_time', 'last_7_days'];
+    const intervals = config.intervals;
 
     // Fetch data for all intervals
     const data = await fetchWakapiUserStats(apiKey, username, intervals);
@@ -45,6 +46,23 @@ async function run() {
       const barChartPath = path.join(dataDir, `${field}-bar.svg`);
       saveChart(barChartBuffer, barChartPath);
       console.log(`Generated ${field} bar chart: ${barChartPath}`);
+    }
+
+    // Generate stats cards for both intervals
+    for (const interval of intervals) {
+      const stats = data[interval].data;
+      
+      // Generate combined stats card
+      const statsBuffer = await createStatsCard({
+        title: config.intervalLabels[interval],
+        totalHours: stats.human_readable_total,
+        dailyAverage: stats.human_readable_daily_average,
+        period: stats.human_readable_range
+
+      });
+      const statsPath = path.join(dataDir, `${interval}-coding-stats.svg`);
+      saveChart(statsBuffer, statsPath);
+      console.log(`Generated coding stats card for ${interval}: ${statsPath}`);
     }
 
     console.log('Successfully fetched Wakapi statistics and generated charts');

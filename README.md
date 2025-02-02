@@ -1,14 +1,22 @@
-<table cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 8px;">
+<table cellspacing="0" cellpadding="0" style="border-collapse: separate; border-spacing: 8px; width: 100%;">
   <tr>
-    <td width="50%" align="center" style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 12px;">
-      <h4 style="margin: 0 0 8px 0;">Projects</h4>
-      <img src="/../../raw/data/data/projects-radar.svg" alt="Time Spent by Project" width="100%" style="border-radius: 8px; margin-bottom: 8px;">
-      <img src="/../../raw/data/data/projects-bar.svg" alt="Time Spent by Project (Bar)" width="100%" style="border-radius: 8px;">
+    <td width="50%" align="center">
+      <img src="/../../raw/data/data/all_time-coding-stats.svg" alt="Daily Average Hours" width="100%">
     </td>
-    <td width="50%" align="center" style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 12px;">
-      <h4 style="margin: 0 0 8px 0;">Programming Languages</h4>
-      <img src="/../../raw/data/data/languages-radar.svg" alt="Time Spent by Language" width="100%" style="border-radius: 8px; margin-bottom: 8px;">
-      <img src="/../../raw/data/data/languages-bar.svg" alt="Time Spent by Language (Bar)" width="100%" style="border-radius: 8px;">
+    <td width="50%" align="center">
+      <img src="/../../raw/data/data/last_7_days-coding-stats.svg" alt="Total Hours" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <!-- <h4 style="margin: 0 0 8px 0;">Projects</h4> -->
+      <img src="/../../raw/data/data/projects-radar.svg" alt="Time Spent by Project" width="100%" style="margin-bottom: 8px;">
+      <img src="/../../raw/data/data/projects-bar.svg" alt="Time Spent by Project (Bar)" width="100%">
+    </td>
+    <td width="50%" align="center">
+      <!-- <h4 style="margin: 0 0 8px 0;">Programming Languages</h4> -->
+      <img src="/../../raw/data/data/languages-radar.svg" alt="Time Spent by Language" width="100%" style="margin-bottom: 8px;">
+      <img src="/../../raw/data/data/languages-bar.svg" alt="Time Spent by Language (Bar)" width="100%">
     </td>
   </tr>
 </table>

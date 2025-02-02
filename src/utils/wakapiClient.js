@@ -47,4 +47,4 @@ exports.fetchWakapiUserStats = async function(apiKey, username, intervals) {
   }
 
   return results;
-}; 
+};

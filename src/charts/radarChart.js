@@ -1,5 +1,5 @@
 const vega = require('vega');
-const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR, SPLIT_LIMIT } = require('./configs');
+const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR, SPLIT_LIMIT, FONT_FAMILY, FONT_COLOR, LABEL_COLOR, FONT_SIZE } = require('./configs');
 
 exports.createRadarChart = async function(datasets, field) {
   // Validate input data
@@ -211,10 +211,11 @@ exports.createRadarChart = async function(datasets, field) {
                     "value": 0
                   }
                 ],
-                "fontSize": {"value": config.fontSize},
-                "font": {"value": config.fontFamily},
-                "fill": {"value": config.labelColor}
+                "fontSize": {"value": FONT_SIZE},
+                "font": {"value": FONT_FAMILY},
+                "fill": {"value": LABEL_COLOR}
               }
+
             }
           }
         ]
@@ -266,9 +267,10 @@ exports.createRadarChart = async function(datasets, field) {
                 "value": "bottom"
               }
             ],
-            "fill": {"value": config.fontColor},
-            "font": {"value": config.fontFamily},
-            "fontSize": {"value": config.fontSize}
+            "fill": {"value": FONT_COLOR},
+            "font": {"value": FONT_FAMILY},
+            "fontSize": {"value": FONT_SIZE}
+
           }
         }
       }
