@@ -1,9 +1,5 @@
 const vega = require('vega');
-const { chartConfigs } = require('./configs');
-
-const ALL_TIME_COLOR = '#FF8343';
-const LAST_7_DAYS_COLOR = '#179BAE';
-const TODAY_COLOR = '#F1DEC6';
+const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR } = require('./configs');
 
 exports.createRadarChart = async function(datasets, field) {
   // Validate input data
@@ -41,7 +37,7 @@ exports.createRadarChart = async function(datasets, field) {
         percent: item ? Math.min(item.percent, 50) : 0,
         actualPercent: item ? item.percent : 0,
         hours: totalMinutes / 60,
-        formattedHours: roundedHours >= 1 ? `${roundedHours}h` : ""
+        formattedPercent: item ? `${Math.round(item.percent)}%` : 0
       };
     });
   }).flat();
@@ -95,9 +91,8 @@ exports.createRadarChart = async function(datasets, field) {
       {
         "name": "color",
         "type": "ordinal",
-        "domain": ["all_time", "last_7_days", "today"],
-        "range": [ALL_TIME_COLOR, LAST_7_DAYS_COLOR, TODAY_COLOR]
-
+        "domain": ["all_time", "last_7_days"],
+        "range": [ALL_TIME_COLOR, LAST_7_DAYS_COLOR]
       }
     ],
 
@@ -129,7 +124,7 @@ exports.createRadarChart = async function(datasets, field) {
                 "stroke": {"scale": "color", "field": "period"},
                 "strokeWidth": {"value": 2},
                 "fill": {"scale": "color", "field": "period"},
-                "fillOpacity": {"value": 0.75}
+                "fillOpacity": {"value": 0.8}
               }
             }
           },
@@ -156,7 +151,15 @@ exports.createRadarChart = async function(datasets, field) {
               "enter": {
                 "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.language))"},
                 "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.language))"},
-                "text": {"field": "formattedHours"},
+                "text": [
+                  {
+                    "test": "datum.percent >= 5",
+                    "field": "formattedPercent"
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
                 "align": [
                   {
                     "test": "abs(scale('angular', datum.language)) > PI / 2",
@@ -201,13 +204,12 @@ exports.createRadarChart = async function(datasets, field) {
                     "value": 0
                   }
                 ],
-                "fontSize": {"value": 14},
+                "fontSize": {"value": config.fontSize},
                 "font": {"value": config.fontFamily},
-                "fill": {"value": "#ffffff"}
+                "fill": {"value": config.labelColor}
               }
             }
           }
-
         ]
       },
       {
@@ -258,7 +260,7 @@ exports.createRadarChart = async function(datasets, field) {
             ],
             "fill": {"value": config.fontColor},
             "font": {"value": config.fontFamily},
-            "fontSize": {"value": 12}
+            "fontSize": {"value": config.fontSize}
           }
         }
       }

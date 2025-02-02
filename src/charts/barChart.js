@@ -1,79 +1,150 @@
 const vega = require('vega');
-const { chartConfigs } = require('./configs');
+const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR } = require('./configs');
 
-exports.createBarChart = async function(data, field) {
+exports.createBarChart = async function(datasets, field) {
+
+  if (!datasets || !datasets.length) {
+    throw new Error('No datasets provided for bar chart');
+  }
+
+  const allTimeDataset = datasets.find(d => d.period === 'all_time');
+  const weekDataset = datasets.find(d => d.period === 'last_7_days');
+
+  
+  if (!allTimeDataset || !weekDataset) {
+    throw new Error('All required datasets (all_time, last_7_days) must be provided');
+  }
+
+
   const config = chartConfigs[field];
-  // Take only the first maxProjects items (data is already sorted)
-  const filteredData = data[field]
+  // Process and combine data from all periods
+  const filteredAllTime = allTimeDataset.data[field]
     .filter(item => item.total_seconds > 0)
-    .slice(0, config.maxProjects);
-  const itemCount = filteredData.length;
+    .slice(0, config.maxLength);
+
+  // Create combined dataset with all periods
+  const combinedData = filteredAllTime.flatMap(item => {
+    const weekItem = weekDataset.data[field].find(d => d.name === item.name) || { total_seconds: 0 };
+
+    return [
+      {
+        name: item.name,
+        value: weekItem.total_seconds,
+        category: 'last_7_days'
+      },
+      {
+        name: item.name,
+        value: item.total_seconds - weekItem.total_seconds,
+        category: 'all_time'
+      }
+    ];
+  });
+
+  const itemCount = combinedData.length;
 
   const spec = {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": config.width,
-    "height": itemCount * 40,
-    "padding": {"top": 30, "left": 10, "right": 30, "bottom": 10},
-    "title": {
-      "text": config.title,
-      "fontSize": config.fontSize,
-      "font": config.fontFamily,
-      "color": config.fontColor
+    "height": itemCount * 20,
+    "padding": "5",
+    "layout": {
+      "legend": {
+        "bottom": {
+          "anchor": "middle",
+          "direction": "horizontal",
+          "center": true,
+          "margin": 4
+        }
+      }
     },
     "data": [
       {
         "name": "table",
-        "values": filteredData
+        "values": combinedData,
+        "transform": [
+          {
+            "type": "stack",
+            "groupby": ["name"],
+            "field": "value",
+            "sort": {"field": "category"}
+          }
+        ]
       }
     ],
     "scales": [
       {
-        "name": "yscale",
+        "name": "name",
         "type": "band",
-        "domain": {"data": "table", "field": "name"},
         "range": "height",
-        "padding": 0.3,
-        "round": true
+        "domain": {"data": "table", "field": "name"},
+        "padding": 0.2,
       },
       {
-        "name": "xscale",
-        "domain": {"data": "table", "field": "total_seconds"},
-        "nice": true,
-        "range": "width"
+        "name": "value",
+        "type": "linear",
+        "range": "width",
+        "nice": true, "zero": true,
+        "domain": {"data": "table", "field": "value"}
+      },
+      {
+        "name": "color",
+        "type": "ordinal",
+        "range": [LAST_7_DAYS_COLOR, ALL_TIME_COLOR],
+        "domain": {"data": "table", "field": "category"}
       }
     ],
+  
     "axes": [
       {
-        "orient": "bottom",
-        "scale": "xscale",
-        "labelFont": config.fontFamily,
-        "titleFont": config.fontFamily,
+        "orient": "left", 
+        "scale": "name", 
+        "labels": false
+      },
+      {
+        "orient": "bottom", 
+        "scale": "value", 
+        "zindex": 1,
+        "tickColor": config.fontColor,
         "labelColor": config.fontColor,
-        "titleColor": config.fontColor,
-        "grid": true,
-        "gridColor": "#f0f0f0",
-        "format": "d",
+        "labelFont": config.fontFamily,
+        "labelFontSize": 10,
+        "format": "s",
+        "formatType": "number",
+
         "encode": {
           "labels": {
             "update": {
-              "text": {"signal": "format(datum.value / 3600, '~d') + ' hrs'"}
+              "text": {"signal": "format(datum.value / 3600, '~d') + 'h'"}
             }
           }
         }
       }
     ],
+  
+    "legends": [
+      {
+        "fill": "color",
+        "orient": "bottom",
+        "direction": "horizontal",
+        "labelColor": config.fontColor,
+        "labelFont": config.fontFamily,
+        "labelFontSize": config.fontSize,
+        "titlePadding": 5,
+        "columns": 2
+      }
+    ],
+
     "marks": [
       {
         "type": "rect",
         "from": {"data": "table"},
         "encode": {
           "enter": {
-            "y": {"scale": "yscale", "field": "name"},
-            "height": {"scale": "yscale", "band": 1},
-            "x": {"scale": "xscale", "value": 0},
-            "x2": {"scale": "xscale", "field": "total_seconds"},
-            "fill": {"value": "#4C78A8"},
-            "cornerRadius": {"value": 3}
+            "y": {"scale": "name", "field": "name"},
+            "height": {"scale": "name", "band": 1},
+            "x": {"scale": "value", "field": "y0"},
+            "x2": {"scale": "value", "field": "y1"},
+            "fill": {"scale": "color", "field": "category"}
           }
         }
       },
@@ -82,14 +153,15 @@ exports.createBarChart = async function(data, field) {
         "from": {"data": "table"},
         "encode": {
           "enter": {
-            "y": {"scale": "yscale", "field": "name", "band": 0.5},
-            "x": {"value": 10},
+            "y": {"scale": "name", "field": "name", "band": 0.5},
+            "x": {"value": 5},
             "text": {"field": "name"},
-            "fontSize": {"value": 13},
-            "fill": {"value": "white"},
+            "fontSize": {"value": config.fontSize},
+            "font": {"value": config.fontFamily},
+            "fill": {"value": config.fontColor},
             "align": {"value": "left"},
-            "baseline": {"value": "middle"},
-            "font": {"value": config.fontFamily}
+            "baseline": {"value": "middle"}
+
           }
         }
       }
@@ -97,63 +169,6 @@ exports.createBarChart = async function(data, field) {
   };
 
   const view = new vega.View(vega.parse(spec), {renderer: 'none'});
-  return await view.toCanvas();
-};
-
-exports.createLanguageBarChart = async function(data) {
-  const config = chartConfigs.languages;
-  
-  const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": config.width,
-    "height": config.height,
-    "title": {
-      "text": config.title,
-      "fontSize": config.fontSize,
-      "font": config.fontFamily,
-      "color": config.fontColor
-    },
-    "data": {
-      "values": data.languages.map(lang => ({
-        "language": lang.key,
-        "heartbeats": lang.total
-      }))
-    },
-    "mark": "bar",
-    "encoding": {
-      "y": {
-        "field": "language",
-        "type": "nominal",
-        "sort": "-x",
-        "axis": {
-          "labelFont": config.fontFamily,
-          "titleFont": config.fontFamily,
-          "labelColor": config.fontColor,
-          "titleColor": config.fontColor
-        }
-      },
-      "x": {
-        "field": "heartbeats",
-        "type": "quantitative",
-        "axis": {
-          "labelFont": config.fontFamily,
-          "titleFont": config.fontFamily,
-          "labelColor": config.fontColor,
-          "titleColor": config.fontColor
-        }
-      },
-      "color": {
-        "field": "language",
-        "type": "nominal",
-        "legend": null
-      }
-    },
-    "config": {
-      "view": {"stroke": "transparent"},
-      "axis": {"grid": false}
-    }
-  };
-
-  const view = new vega.View(vega.parse(spec), {renderer: 'none'});
-  return await view.toCanvas();
+  const canvas = await view.toCanvas();
+  return canvas.toBuffer('image/png');
 };
