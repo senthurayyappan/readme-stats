@@ -269,15 +269,14 @@ exports.createRadarChart = async function(datasets, field) {
 
   try {
     const view = new vega.View(vega.parse(spec), {
-      renderer: 'none',
+      renderer: 'svg',
       width: config.width,
-      height: config.height
+      height: config.height,
     });
 
-    await view.initialize();
-    const canvas = await view.toCanvas();
-    
-    return canvas;
+    const svg = await view.toSVG();
+    return Buffer.from(svg);
+
   } catch (error) {
     console.error('Error creating chart:', error);
     throw error;

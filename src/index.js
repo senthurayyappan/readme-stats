@@ -34,14 +34,15 @@ async function run() {
       }));
 
       // Generate combined radar chart
-      const canvas = await createRadarChart(datasets, field);
-      const radarChartPath = path.join(dataDir, `${field}-radar.png`);
-      saveChart(canvas.toBuffer(), radarChartPath);
+      const radarChartBuffer = await createRadarChart(datasets, field);
+      const radarChartPath = path.join(dataDir, `${field}-radar.svg`);
+      saveChart(radarChartBuffer, radarChartPath);
       console.log(`Generated combined ${field} radar chart: ${radarChartPath}`);
+
 
       // Generate bar chart
       const barChartBuffer = await createBarChart(datasets, field);
-      const barChartPath = path.join(dataDir, `${field}-bar.png`);
+      const barChartPath = path.join(dataDir, `${field}-bar.svg`);
       saveChart(barChartBuffer, barChartPath);
       console.log(`Generated ${field} bar chart: ${barChartPath}`);
     }

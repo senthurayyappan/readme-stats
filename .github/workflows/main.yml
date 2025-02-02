@@ -16,9 +16,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repository
+      - name: Checkout main repository
         uses: actions/checkout@v4
 
+      - name: Checkout data branch
+        run: |
+          git fetch
+          git checkout -b data origin/data 2>/dev/null || git checkout -b data
+          git checkout main
+          
       - name: Install canvas dependencies
         run: |
           sudo apt-get update
@@ -38,10 +44,12 @@ jobs:
           WAKAPI_TOKEN: ${{ secrets.WAKAPI_TOKEN }}
           WAKAPI_USERNAME: ${{ secrets.WAKAPI_USERNAME }}
 
-      - name: Commit and push if changed
+      - name: Commit and push to data branch
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
+          git checkout data
           git add data/
-          git commit -m "Update stats" || exit 0
-          git push
+          git commit -m "Update stats for ${{ github.run_id }}" || exit 0
+          git push origin data
+          git checkout main

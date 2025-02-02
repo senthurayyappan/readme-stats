@@ -10,8 +10,8 @@ exports.LAST_7_DAYS_COLOR = '#FFF574';
 exports.chartConfigs = {
   projects: {
     title: 'Time Spent by Project',
-    width: 500,
-    height: 500,
+    width: 400,
+    height: 400,
     fontFamily: FONT_FAMILY,
     fontColor: FONT_COLOR,
     labelColor: LABEL_COLOR,
@@ -20,8 +20,8 @@ exports.chartConfigs = {
   },
   languages: {
     title: 'Programming Languages',
-    width: 500,
-    height: 500,
+    width: 400,
+    height: 400,
     fontFamily: FONT_FAMILY,
     fontSize: FONT_SIZE,
     maxLength: 6,

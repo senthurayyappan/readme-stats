@@ -45,7 +45,7 @@ exports.createBarChart = async function(datasets, field) {
   const spec = {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": config.width,
-    "height": itemCount * 20,
+    "height": itemCount * 12,
     "padding": "5",
     "layout": {
       "legend": {
@@ -168,7 +168,10 @@ exports.createBarChart = async function(datasets, field) {
     ]
   };
 
-  const view = new vega.View(vega.parse(spec), {renderer: 'none'});
-  const canvas = await view.toCanvas();
-  return canvas.toBuffer('image/png');
+  const view = new vega.View(vega.parse(spec), {
+    renderer: 'svg'
+  });
+  
+  const svg = await view.toSVG();
+  return Buffer.from(svg);
 };
