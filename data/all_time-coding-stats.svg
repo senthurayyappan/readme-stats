@@ -7,7 +7,8 @@
         text-anchor="middle" 
         font-family="Arial, sans-serif" 
         font-size="14" 
-        fill="#bfc6cc"
+        font-weight="bold" 
+        fill="#7c848c"
       >All Time</text>
 
       <!-- Total Hours -->
@@ -30,7 +31,7 @@
         font-weight="bold" 
         fill="#bfc6cc"
 
-      >92 hrs 51 mins</text>
+      >93 hrs 2 mins</text>
 
       <!-- Daily Average -->
       <text 
@@ -50,7 +51,7 @@
         font-family="Arial, sans-serif" 
         font-size="14" 
         font-weight="bold" 
-        fill="#31b74c"
+        fill="#276ee0"
       >2 hrs 54 mins</text>
     </svg>
   

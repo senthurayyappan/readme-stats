@@ -1,4 +1,4 @@
-const { CODING_STATS_BIG_FONT_SIZE, CODING_STATS_MEDIUM_FONT_SIZE, FONT_FAMILY, FONT_SIZE, GITHUB_BLACK, GITHUB_LIGHT_GREEN, GITHUB_WHITE, GITHUB_NEUTRAL_GREEN, GITHUB_DARK_GREEN, GITHUB_LIGHT_GRAY, GITHUB_NEUTRAL_GRAY, GITHUB_DARK_GRAY } = require('./configs');
+const { CODING_STATS_BIG_FONT_SIZE, CODING_STATS_MEDIUM_FONT_SIZE, FONT_FAMILY, FONT_SIZE, GITHUB_BLUE, GITHUB_LIGHT_GREEN, GITHUB_WHITE, GITHUB_NEUTRAL_GREEN, GITHUB_DARK_GREEN, GITHUB_LIGHT_GRAY, GITHUB_NEUTRAL_GRAY, GITHUB_DARK_GRAY } = require('./configs');
 
 
 exports.createStatsCard = async function createStatsCard({ title, totalHours, dailyAverage, period }) {
@@ -15,7 +15,7 @@ exports.createStatsCard = async function createStatsCard({ title, totalHours, da
         font-family="${FONT_FAMILY}" 
         font-size="${CODING_STATS_MEDIUM_FONT_SIZE}" 
         font-weight="bold" 
-        fill="${GITHUB_WHITE}"
+        fill="${GITHUB_LIGHT_GRAY}"
       >${title}</text>
 
       <!-- Total Hours -->
@@ -58,7 +58,7 @@ exports.createStatsCard = async function createStatsCard({ title, totalHours, da
         font-family="${FONT_FAMILY}" 
         font-size="${CODING_STATS_MEDIUM_FONT_SIZE}" 
         font-weight="bold" 
-        fill="${GITHUB_LIGHT_GREEN}"
+        fill="${GITHUB_BLUE}"
       >${dailyAverage}</text>
     </svg>
   `;

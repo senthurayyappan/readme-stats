@@ -6,6 +6,7 @@ exports.GITHUB_DARK_GREEN = "#0f452d";
 exports.GITHUB_LIGHT_GRAY = "#7c848c";
 exports.GITHUB_NEUTRAL_GRAY = "#3c444c";
 exports.GITHUB_DARK_GRAY = "#34343c";
+exports.GITHUB_BLUE = "#276ee0";
 
 // Define a common set of system-safe fonts
 exports.FONT_FAMILY = 'Arial, sans-serif';
