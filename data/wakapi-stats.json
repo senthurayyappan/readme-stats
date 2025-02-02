@@ -1,0 +1,153 @@
+{
+  "user_id": "senthurayyappan",
+  "from": "2025-01-25T15:03:11.315499449-05:00",
+  "to": "2025-02-01T15:00:18.734-05:00",
+  "projects": [
+    {
+      "key": "senthurayyappan",
+      "total": 15698
+    },
+    {
+      "key": "neurobionicspi",
+      "total": 13510
+    },
+    {
+      "key": "senthurayyappan.github.io",
+      "total": 6069
+    },
+    {
+      "key": "robot-nm",
+      "total": 1197
+    },
+    {
+      "key": "pi",
+      "total": 132
+    },
+    {
+      "key": "onshape-robotics-toolkit",
+      "total": 120
+    },
+    {
+      "key": "ballbot-mujoco",
+      "total": 0
+    }
+  ],
+  "languages": [
+    {
+      "key": "YAML",
+      "total": 9545
+    },
+    {
+      "key": "JavaScript",
+      "total": 8878
+    },
+    {
+      "key": "unknown",
+      "total": 8523
+    },
+    {
+      "key": "TSX",
+      "total": 5029
+    },
+    {
+      "key": "JSON",
+      "total": 1504
+    },
+    {
+      "key": "Markdown",
+      "total": 1369
+    },
+    {
+      "key": "Rust",
+      "total": 829
+    },
+    {
+      "key": "CSS",
+      "total": 371
+    },
+    {
+      "key": "INI",
+      "total": 132
+    },
+    {
+      "key": "HTML",
+      "total": 125
+    },
+    {
+      "key": "TOML",
+      "total": 124
+    },
+    {
+      "key": "Python",
+      "total": 120
+    },
+    {
+      "key": "Bash",
+      "total": 86
+    },
+    {
+      "key": "TypeScript",
+      "total": 56
+    },
+    {
+      "key": "XML",
+      "total": 21
+    },
+    {
+      "key": "Text",
+      "total": 5
+    }
+  ],
+  "editors": [
+    {
+      "key": "Cursor",
+      "total": 36727
+    },
+    {
+      "key": "Vscode",
+      "total": 0
+    }
+  ],
+  "operating_systems": [
+    {
+      "key": "Linux",
+      "total": 18393
+    },
+    {
+      "key": "Windows",
+      "total": 18333
+    }
+  ],
+  "machines": [
+    {
+      "key": "stan",
+      "total": 18333
+    },
+    {
+      "key": "ROB-ROUSE-16U",
+      "total": 17253
+    },
+    {
+      "key": "raspberrypi",
+      "total": 1139
+    }
+  ],
+  "labels": [
+    {
+      "key": "default",
+      "total": 36726
+    }
+  ],
+  "branches": null,
+  "entities": null,
+  "categories": [
+    {
+      "key": "coding",
+      "total": 36717
+    },
+    {
+      "key": "debugging",
+      "total": 10
+    }
+  ]
+}
