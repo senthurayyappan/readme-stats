@@ -1,4 +1,15 @@
-![osl](https://github.com/senthurayyappan/senthurayyappan/blob/156ec8bb5111b774835c0b3643ca6afc2aaa4623/oslsim.gif)
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <h3>Projects</h3>
+      <img src="./data/projects.png" alt="Time Spent by Project" width="90%">
+    </td>
+    <td width="50%" align="center">
+      <h3>Programming Languages</h3>
+      <img src="./data/languages.png" alt="Time Spent by Language" width="90%">
+    </td>
+  </tr>
+</table>
 
 <div align="center">
 
@@ -9,15 +20,3 @@
   
 </div>
 
-## Coding Statistics
-
-<table>
-  <tr>
-    <td width="50%">
-      <img src="./data/projects-chart.png" alt="Time Spent by Project" width="100%">
-    </td>
-    <td width="50%">
-      <img src="./data/languages-chart.png" alt="Time Spent by Language" width="100%">
-    </td>
-  </tr>
-</table>

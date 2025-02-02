@@ -3,56 +3,56 @@
     "username": "senthurayyappan",
     "user_id": "senthurayyappan",
     "start": "2025-02-02T00:01:16-05:00",
-    "end": "2025-02-02T02:19:40-05:00",
+    "end": "2025-02-02T02:42:51-05:00",
     "status": "ok",
-    "total_seconds": 9041,
+    "total_seconds": 9489,
     "daily_average": 0,
     "days_including_holidays": 0,
     "range": "today",
     "human_readable_range": "Today",
-    "human_readable_total": "2 hrs 31 mins",
+    "human_readable_total": "2 hrs 38 mins",
     "human_readable_daily_average": "",
     "is_coding_activity_visible": false,
     "is_other_usage_visible": false,
     "editors": [
       {
-        "digital": "2:30:41",
+        "digital": "2:38:9",
         "hours": 2,
-        "minutes": 30,
+        "minutes": 38,
         "name": "Cursor",
         "percent": 100,
-        "seconds": 41,
-        "text": "2 hrs 31 mins",
-        "total_seconds": 9041
+        "seconds": 9,
+        "text": "2 hrs 38 mins",
+        "total_seconds": 9489
       }
     ],
     "languages": [
       {
-        "digital": "2:9:44",
+        "digital": "2:16:9",
         "hours": 2,
-        "minutes": 9,
+        "minutes": 16,
         "name": "JavaScript",
-        "percent": 86.1,
-        "seconds": 44,
-        "text": "2 hrs 10 mins",
-        "total_seconds": 7784
+        "percent": 86.11,
+        "seconds": 9,
+        "text": "2 hrs 16 mins",
+        "total_seconds": 8169
       },
       {
-        "digital": "0:16:51",
+        "digital": "0:16:57",
         "hours": 0,
         "minutes": 16,
         "name": "JSON",
-        "percent": 11.18,
-        "seconds": 51,
+        "percent": 10.72,
+        "seconds": 57,
         "text": "0 hrs 17 mins",
-        "total_seconds": 1011
+        "total_seconds": 1017
       },
       {
         "digital": "0:2:29",
         "hours": 0,
         "minutes": 2,
         "name": "Bash",
-        "percent": 1.65,
+        "percent": 1.57,
         "seconds": 29,
         "text": "0 hrs 2 mins",
         "total_seconds": 149
@@ -62,58 +62,68 @@
         "hours": 0,
         "minutes": 1,
         "name": "YAML",
-        "percent": 1.07,
+        "percent": 1.02,
         "seconds": 37,
         "text": "0 hrs 2 mins",
         "total_seconds": 97
+      },
+      {
+        "digital": "0:0:55",
+        "hours": 0,
+        "minutes": 0,
+        "name": "Markdown",
+        "percent": 0.58,
+        "seconds": 55,
+        "text": "0 hrs 1 mins",
+        "total_seconds": 55
       }
     ],
     "machines": [
       {
-        "digital": "2:30:41",
+        "digital": "2:38:9",
         "hours": 2,
-        "minutes": 30,
+        "minutes": 38,
         "name": "stan",
         "percent": 100,
-        "seconds": 41,
-        "text": "2 hrs 31 mins",
-        "total_seconds": 9041
+        "seconds": 9,
+        "text": "2 hrs 38 mins",
+        "total_seconds": 9489
       }
     ],
     "projects": [
       {
-        "digital": "2:30:41",
+        "digital": "2:38:9",
         "hours": 2,
-        "minutes": 30,
+        "minutes": 38,
         "name": "senthurayyappan",
         "percent": 100,
-        "seconds": 41,
-        "text": "2 hrs 31 mins",
-        "total_seconds": 9041
+        "seconds": 9,
+        "text": "2 hrs 38 mins",
+        "total_seconds": 9489
       }
     ],
     "operating_systems": [
       {
-        "digital": "2:30:41",
+        "digital": "2:38:9",
         "hours": 2,
-        "minutes": 30,
+        "minutes": 38,
         "name": "Windows",
         "percent": 100,
-        "seconds": 41,
-        "text": "2 hrs 31 mins",
-        "total_seconds": 9041
+        "seconds": 9,
+        "text": "2 hrs 38 mins",
+        "total_seconds": 9489
       }
     ],
     "categories": [
       {
-        "digital": "2:30:41",
+        "digital": "2:38:9",
         "hours": 2,
-        "minutes": 30,
+        "minutes": 38,
         "name": "coding",
         "percent": 100,
-        "seconds": 41,
-        "text": "2 hrs 31 mins",
-        "total_seconds": 9041
+        "seconds": 9,
+        "text": "2 hrs 38 mins",
+        "total_seconds": 9489
       }
     ]
   }
