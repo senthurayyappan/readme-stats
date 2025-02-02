@@ -7,9 +7,6 @@ exports.createStatsCard = async function createStatsCard({ title, totalHours, da
 
   const svg = `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <!-- Border -->
-      <rect width="${width-1}" height="${height-1}" stroke="${GITHUB_LIGHT_GRAY}" fill="transparent" rx="5" ry="5"/>
-      
       <!-- Title -->
       <text 
         x="50%" 
@@ -19,7 +16,6 @@ exports.createStatsCard = async function createStatsCard({ title, totalHours, da
         font-size="${CODING_STATS_MEDIUM_FONT_SIZE}" 
         font-weight="bold" 
         fill="${GITHUB_WHITE}"
-
       >${title}</text>
 
       <!-- Total Hours -->

@@ -1,8 +1,5 @@
 
     <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Border -->
-      <rect width="399" height="99" stroke="#7c848c" fill="transparent" rx="5" ry="5"/>
-      
       <!-- Title -->
       <text 
         x="50%" 
@@ -10,9 +7,7 @@
         text-anchor="middle" 
         font-family="Arial, sans-serif" 
         font-size="14" 
-        font-weight="bold" 
         fill="#bfc6cc"
-
       >Last Week</text>
 
       <!-- Total Hours -->
@@ -35,7 +30,7 @@
         font-weight="bold" 
         fill="#bfc6cc"
 
-      >23 hrs 40 mins</text>
+      >23 hrs 49 mins</text>
 
       <!-- Daily Average -->
       <text 
@@ -56,6 +51,6 @@
         font-size="14" 
         font-weight="bold" 
         fill="#31b74c"
-      >3 hrs 57 mins</text>
+      >3 hrs 58 mins</text>
     </svg>
   
