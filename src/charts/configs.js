@@ -8,7 +8,8 @@ exports.chartConfigs = {
     width: 500,
     height: 500,
     fontFamily: FONT_FAMILY,
-    fontColor: FONT_COLOR,    
+    fontColor: FONT_COLOR,
+    maxLength: 6,
     fontSize: 16
   },
   languages: {
@@ -17,7 +18,7 @@ exports.chartConfigs = {
     height: 500,
     fontFamily: FONT_FAMILY,
     fontSize: 20,
-    maxLanguages: 8,
+    maxLength: 6,
     fontColor: FONT_COLOR,
   },
   operating_systems: {

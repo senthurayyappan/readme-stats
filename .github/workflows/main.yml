@@ -19,11 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Install canvas dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -36,7 +31,7 @@ jobs:
         run: node src/index.js
         env:
           WAKAPI_TOKEN: ${{ secrets.WAKAPI_TOKEN }}
-          INTERVAL: '7_days'
+          WAKAPI_USERNAME: ${{ secrets.WAKAPI_USERNAME }}
 
       - name: Commit and push if changed
         run: |

@@ -3,12 +3,17 @@ const { chartConfigs } = require('./configs');
 
 exports.createBarChart = async function(data, field) {
   const config = chartConfigs[field];
-  
+  // Take only the first maxProjects items (data is already sorted)
+  const filteredData = data[field]
+    .filter(item => item.total_seconds > 0)
+    .slice(0, config.maxProjects);
+  const itemCount = filteredData.length;
+
   const spec = {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": config.width,
-    "height": config.height,
-    "padding": 5,
+    "height": itemCount * 40,
+    "padding": {"top": 30, "left": 10, "right": 30, "bottom": 10},
     "title": {
       "text": config.title,
       "fontSize": config.fontSize,
@@ -18,49 +23,43 @@ exports.createBarChart = async function(data, field) {
     "data": [
       {
         "name": "table",
-        "values": data[field].filter(item => item.total > 0)
+        "values": filteredData
       }
-    ],
-    "signals": [
-      {"name": "tooltip", "value": {}}
     ],
     "scales": [
       {
-        "name": "xscale",
+        "name": "yscale",
         "type": "band",
-        "domain": {"data": "table", "field": "key"},
-        "range": "width",
-        "padding": 0.05,
+        "domain": {"data": "table", "field": "name"},
+        "range": "height",
+        "padding": 0.3,
         "round": true
       },
       {
-        "name": "yscale",
-        "domain": {"data": "table", "field": "total"},
+        "name": "xscale",
+        "domain": {"data": "table", "field": "total_seconds"},
         "nice": true,
-        "range": "height"
+        "range": "width"
       }
     ],
     "axes": [
       {
         "orient": "bottom",
         "scale": "xscale",
-        "labelAngle": -45,
-        "labelAlign": "right",
         "labelFont": config.fontFamily,
         "titleFont": config.fontFamily,
+        "labelColor": config.fontColor,
         "titleColor": config.fontColor,
-        "labelColor": config.fontColor
-      },
-      {
-        "orient": "left", 
-
-
-        "scale": "yscale",
-        "labelFont": config.fontFamily,
-        "titleFont": config.fontFamily,
-        "titleColor": config.fontColor,
-        "labelColor": config.fontColor
-
+        "grid": true,
+        "gridColor": "#f0f0f0",
+        "format": "d",
+        "encode": {
+          "labels": {
+            "update": {
+              "text": {"signal": "format(datum.value / 3600, '~d') + ' hrs'"}
+            }
+          }
+        }
       }
     ],
     "marks": [
@@ -69,11 +68,28 @@ exports.createBarChart = async function(data, field) {
         "from": {"data": "table"},
         "encode": {
           "enter": {
-            "x": {"scale": "xscale", "field": "key"},
-            "width": {"scale": "xscale", "band": 1},
-            "y": {"scale": "yscale", "field": "total"},
-            "y2": {"scale": "yscale", "value": 0},
-            "fill": {"value": "#4C78A8"}
+            "y": {"scale": "yscale", "field": "name"},
+            "height": {"scale": "yscale", "band": 1},
+            "x": {"scale": "xscale", "value": 0},
+            "x2": {"scale": "xscale", "field": "total_seconds"},
+            "fill": {"value": "#4C78A8"},
+            "cornerRadius": {"value": 3}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "from": {"data": "table"},
+        "encode": {
+          "enter": {
+            "y": {"scale": "yscale", "field": "name", "band": 0.5},
+            "x": {"value": 10},
+            "text": {"field": "name"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"},
+            "align": {"value": "left"},
+            "baseline": {"value": "middle"},
+            "font": {"value": config.fontFamily}
           }
         }
       }
@@ -140,4 +156,4 @@ exports.createLanguageBarChart = async function(data) {
 
   const view = new vega.View(vega.parse(spec), {renderer: 'none'});
   return await view.toCanvas();
-}; 
+};

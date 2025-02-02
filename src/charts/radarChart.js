@@ -1,72 +1,83 @@
 const vega = require('vega');
 const { chartConfigs } = require('./configs');
 
-exports.createLanguageRadarChart = async function(data) {
+const ALL_TIME_COLOR = '#c4dbf7';
+const LAST_7_DAYS_COLOR = '#c6efbf';
+const TODAY_COLOR = '#fba097';
+
+const fillOpacityMap = {
+  'all_time': 0.1,
+  'last_7_days': 0.5,
+  'today': 0.5
+}
+
+exports.createRadarChart = async function(datasets, field) {
   // Validate input data
-  if (!data || !data.languages || data.languages.length === 0) {
-    throw new Error('No language data provided for radar chart');
+  if (!datasets || !datasets.length) {
+    throw new Error('No datasets provided for radar chart');
   }
 
-  const config = chartConfigs.languages;
+  const config = chartConfigs[field];
   
-  // Take top N languages based on config
-  const topLanguages = data.languages.slice(0, config.maxLanguages);
+  // 1. First get all_time data to establish reference axes
+  const allTimeDataset = datasets.find(d => d.period === 'all_time');
+  if (!allTimeDataset) {
+    throw new Error('All-time dataset is required for radar chart');
+  }
+
+  // Get reference axes from all_time data
+  const referenceAxes = allTimeDataset.data[field]
+    .filter(item => item.percent > 1)
+    .slice(0, config.maxLength)
+    .map(item => item.name);
+
+  // 2. Process all datasets using the reference axes
+  const processedData = datasets.map(dataset => {
+    const dataMap = new Map(
+      dataset.data[field].map(item => [item.name, item])
+    );
+    return referenceAxes.map(axisName => {
+      const item = dataMap.get(axisName);
+      const totalMinutes = item ? (item.hours * 60 + item.minutes) : 0;
+      const roundedHours = Math.ceil(totalMinutes / 60);
+      
+      return {
+        period: dataset.period,
+        language: axisName,
+        percent: item ? Math.min(item.percent, 50) : 0,
+        actualPercent: item ? item.percent : 0,
+        hours: totalMinutes / 60,
+        formattedHours: roundedHours >= 1 ? `${roundedHours}h` : ""
+      };
+    });
+  }).flat();
+
   const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "Radar chart showing coding time across different time periods",
     "width": config.width,
     "height": config.height,
-    "title": {
-      "text": config.title,
-      "fontSize": config.fontSize,
-      "font": config.fontFamily,
-      "color": config.fontColor
-    },
-    "layer": [
-      {
-        "mark": {
-          "type": "line",
-          "color": config.fontColor,
-          "strokeWidth": 1
-        },
-        "encoding": {
-          "y": {"field": "x", "type": "quantitative"},
-          "x": {"field": "y", "type": "quantitative"}
-        },
-        "data": {
-          "values": Array.from({length: 361}, (_, i) => {
-            const angle = (i * Math.PI) / 180;
-            return {
-              x: Math.cos(angle),
-              y: Math.sin(angle)
-            };
-          })
-        }
-      },
-      {
-        "mark": {"type": "line", "color": config.fontColor},
-        "encoding": {
-          "y": {"field": "y", "type": "quantitative"},
-          "x": {"field": "x", "type": "quantitative"},
-          "detail": {"field": "language"}
-        }
-      },
-      {
-        "mark": {"type": "text", "color": config.fontColor},
-        "encoding": {
-          "y": {"field": "y", "type": "quantitative"},
-          "x": {"field": "x", "type": "quantitative"},
-          "text": {"field": "language"}
-        }
-      }
+    "padding": 50,
+    "autosize": {"type": "none", "contains": "padding"},
+
+    "signals": [
+      {"name": "radius", "update": "width / 2"}
     ],
-    "padding": 40,
+
     "data": [
       {
-        "name": "languages",
-        "values": topLanguages.map(lang => ({
-          "language": lang.key,
-          "heartbeats": lang.total
-        }))
+        "name": "table",
+        "values": processedData
+      },
+      {
+        "name": "keys",
+        "source": "table",
+        "transform": [
+          {
+            "type": "aggregate",
+            "groupby": ["language"]
+          }
+        ]
       }
     ],
 
@@ -76,114 +87,188 @@ exports.createLanguageRadarChart = async function(data) {
         "type": "point",
         "range": {"signal": "[-PI, PI]"},
         "padding": 0.5,
-        "domain": {"data": "languages", "field": "language"}
+        "domain": referenceAxes
       },
       {
         "name": "radial",
         "type": "linear",
-        "range": {"signal": "[0, width/2.5]"},
+        "range": {"signal": "[0, radius]"},
         "zero": true,
-        "domain": {"data": "languages", "field": "heartbeats"}
+        "nice": false,
+        "domain": [0, 50],
+        "domainMin": 0
+      },
+      {
+        "name": "color",
+        "type": "ordinal",
+        "domain": ["all_time", "last_7_days", "today"],
+        "range": [ALL_TIME_COLOR, LAST_7_DAYS_COLOR, TODAY_COLOR]
+
       }
     ],
+
+    "encode": {
+      "enter": {
+        "x": {"signal": "radius"},
+        "y": {"signal": "radius"}
+      }
+    },
 
     "marks": [
       {
         "type": "group",
-        "center": true,
-        "encode": {
-          "enter": {
-            "x": {"signal": "width/2"},
-            "y": {"signal": "height/2"}
-          }
+        "name": "categories",
+        "zindex": 1,
+        "from": {
+          "facet": {"data": "table", "name": "facet", "groupby": ["period"]}
         },
         "marks": [
           {
             "type": "line",
-            "from": {"data": "languages"},
+            "name": "category-line",
+            "from": {"data": "facet"},
             "encode": {
               "enter": {
                 "interpolate": {"value": "linear-closed"},
-                "x": {"signal": "scale('radial', datum.heartbeats) * cos(scale('angular', datum.language))"},
-                "y": {"signal": "scale('radial', datum.heartbeats) * sin(scale('angular', datum.language))"},
-                "stroke": {"value": "#4C78A8"},
+                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.language))"},
+                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.language))"},
+                "stroke": {"scale": "color", "field": "period"},
                 "strokeWidth": {"value": 2},
-                "fill": {"value": "#4C78A8"},
-                "fillOpacity": {"value": 0.2}
-              }
-            }
-          },
-          {
-            "type": "rule",
-            "from": {"data": "languages"},
-            "encode": {
-              "enter": {
-                "x": {"value": 0},
-                "y": {"value": 0},
-                "x2": {"signal": "width/2.5 * cos(scale('angular', datum.language))"},
-                "y2": {"signal": "width/2.5 * sin(scale('angular', datum.language))"},
-                "stroke": {"value": "#ddd"},
-                "strokeWidth": {"value": 1}
+                "fill": {"scale": "color", "field": "period"},
+                "fillOpacity": {"value": 0.5}
               }
             }
           },
           {
             "type": "symbol",
-            "from": {"data": "languages"},
+            "name": "category-point",
+            "from": {"data": "facet"},
             "encode": {
               "enter": {
-                "x": {"signal": "scale('radial', datum.heartbeats) * cos(scale('angular', datum.language))"},
-                "y": {"signal": "scale('radial', datum.heartbeats) * sin(scale('angular', datum.language))"},
+                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.language))"},
+                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.language))"},
                 "size": {"value": 50},
-                "fill": {"value": "#4C78A8"}
+                "fill": {"scale": "color", "field": "period"},
+                "stroke": {"value": "white"},
+                "strokeWidth": {"value": 1}
               }
             }
           },
           {
             "type": "text",
-            "from": {"data": "languages"},
+            "name": "value-text",
+            "from": {"data": "facet"},
             "encode": {
               "enter": {
-                "x": {"signal": "(width/2.5 + 10) * cos(scale('angular', datum.language))"},
-                "y": {"signal": "(width/2.5 + 10) * sin(scale('angular', datum.language))"},
-                "text": {"field": "language"},
-                "align": {"signal": "cos(scale('angular', datum.language)) < -0.5 ? 'right' : (cos(scale('angular', datum.language)) > 0.5 ? 'left' : 'center')"},
-                "baseline": {"signal": "sin(scale('angular', datum.language)) < -0.5 ? 'top' : (sin(scale('angular', datum.language)) > 0.5 ? 'bottom' : 'middle')"},
-                "fontSize": {"value": 12},
+                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.language))"},
+                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.language))"},
+                "text": {"field": "formattedHours"},
+                "align": [
+                  {
+                    "test": "abs(scale('angular', datum.language)) > PI / 2",
+                    "value": "right"
+                  },
+                  {
+                    "value": "left"
+                  }
+                ],
+                "baseline": [
+                  {
+                    "test": "scale('angular', datum.language) > 0",
+                    "value": "bottom"
+                  },
+                  {
+                    "test": "scale('angular', datum.language) < 0",
+                    "value": "top"
+                  },
+                  {
+                    "value": "middle"
+                  }
+                ],
+                "dx": [
+                  {
+                    "test": "abs(scale('angular', datum.language)) > PI / 2",
+                    "value": -5
+                  },
+                  {
+                    "value": 0
+                  }
+                ],
+                "dy": [
+                  {
+                    "test": "scale('angular', datum.language) > 0",
+                    "value": -5
+                  },
+                  {
+                    "test": "scale('angular', datum.language) < 0",
+                    "value": 5
+                  },
+                  {
+                    "value": 0
+                  }
+                ],
+                "fontSize": {"value": 14},
                 "font": {"value": config.fontFamily},
-                "fill": {"value": config.fontColor}
-              }
-            }
-          },
-          {
-            "type": "text",
-            "from": {"data": "languages"},
-            "encode": {
-              "enter": {
-                "x": {"signal": "scale('radial', datum.heartbeats) * cos(scale('angular', datum.language))"},
-                "y": {"signal": "scale('radial', datum.heartbeats) * sin(scale('angular', datum.language))"},
-                "text": {"field": "heartbeats"},
-                "dx": {"value": 10},
-                "fontSize": {"value": 10},
-                "font": {"value": config.fontFamily},
-                "fill": {"value": "#666"}
+                "fill": {"value": "#ffffff"}
               }
             }
           }
+
         ]
-      }
-    ],
-    "encoding": {
-      "text": {
-        "field": "language",
-        "type": "nominal"
       },
-      "color": {"value": config.fontColor}
-    },
-    "config": {
-      "text": {"color": config.fontColor},
-      "title": {"color": config.fontColor}
-    }
+      {
+        "type": "rule",
+        "name": "radial-grid",
+        "from": {"data": "keys"},
+        "zindex": 0,
+        "encode": {
+          "enter": {
+            "x": {"value": 0},
+            "y": {"value": 0},
+            "x2": {"signal": "radius * cos(scale('angular', datum.language))"},
+            "y2": {"signal": "radius * sin(scale('angular', datum.language))"},
+            "stroke": {"value": "lightgray"},
+            "strokeWidth": {"value": 1}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "name": "key-label",
+        "from": {"data": "keys"},
+        "zindex": 1,
+        "encode": {
+          "enter": {
+            "x": {"signal": "(radius + 15) * cos(scale('angular', datum.language))"},
+            "y": {"signal": "(radius + 15) * sin(scale('angular', datum.language))"},
+            "text": {"field": "language"},
+            "align": [
+              {
+                "test": "abs(scale('angular', datum.language)) > PI / 2",
+                "value": "right"
+              },
+              {
+                "value": "left"
+              }
+            ],
+            "baseline": [
+              {
+                "test": "scale('angular', datum.language) > 0", "value": "top"
+              },
+              {
+                "test": "scale('angular', datum.language) == 0", "value": "middle"
+              },
+              {
+                "value": "bottom"
+              }
+            ],
+            "fill": {"value": config.fontColor},
+            "font": {"value": config.fontFamily},
+            "fontSize": {"value": 12}
+          }
+        }
+      }
+    ]
   };
 
   try {
