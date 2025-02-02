@@ -4,6 +4,7 @@ const FONT_COLOR = "#7c848c";
 const FONT_SIZE = 12;
 const LABEL_COLOR = "#bfc6cc";
 
+exports.SPLIT_LIMIT = 10;
 exports.ALL_TIME_COLOR = '#0f452d';
 exports.LAST_7_DAYS_COLOR = '#31b74c';
 

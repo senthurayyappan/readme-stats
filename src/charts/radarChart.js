@@ -1,5 +1,5 @@
 const vega = require('vega');
-const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR } = require('./configs');
+const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR, SPLIT_LIMIT } = require('./configs');
 
 exports.createRadarChart = async function(datasets, field) {
   // Validate input data
@@ -51,7 +51,8 @@ exports.createRadarChart = async function(datasets, field) {
     "autosize": {"type": "none", "contains": "padding"},
 
     "signals": [
-      {"name": "radius", "update": "width / 2"}
+      {"name": "radius", "update": "width / 2"},
+      {"name": "SPLIT_LIMIT", "value": SPLIT_LIMIT}
     ],
 
     "data": [
@@ -66,9 +67,15 @@ exports.createRadarChart = async function(datasets, field) {
           {
             "type": "aggregate",
             "groupby": ["fieldName"]
+          },
+          {
+            "type": "formula",
+            "as": "lines",
+            "expr": "length(datum.fieldName) > SPLIT_LIMIT ? (indexof(datum.fieldName, '-') >= 0 ? split(datum.fieldName, '-') : [slice(datum.fieldName, 0, SPLIT_LIMIT), slice(datum.fieldName, SPLIT_LIMIT)]) : [datum.fieldName]"
           }
         ]
       }
+
     ],
 
     "scales": [
@@ -237,7 +244,8 @@ exports.createRadarChart = async function(datasets, field) {
           "enter": {
             "x": {"signal": "(radius + 15) * cos(scale('angular', datum.fieldName))"},
             "y": {"signal": "(radius + 15) * sin(scale('angular', datum.fieldName))"},
-            "text": {"field": "fieldName"},
+            "text": {"field": "lines"},
+            "lineHeight": {"value": 12},
             "align": [
               {
                 "test": "abs(scale('angular', datum.fieldName)) > PI / 2",
