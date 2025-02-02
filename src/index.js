@@ -1,8 +1,7 @@
 const core = require('@actions/core');
 const path = require('path');
-const { fetchWakapiStats, fetchWakapiUserStats } = require('./utils/wakapiClient');
+const { fetchWakapiUserStats } = require('./utils/wakapiClient');
 const { ensureDataDir, saveJson, saveChart } = require('./utils/fileSystem');
-const { createBarChart } = require('./charts/barChart');
 const { createRadarChart } = require('./charts/radarChart');
 const { config } = require('./config');
 

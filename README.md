@@ -1,11 +1,11 @@
 <table>
   <tr>
     <td width="50%" align="center">
-      <h3>Projects</h3>
+      <h4>Projects</h4>
       <img src="./data/projects.png" alt="Time Spent by Project" width="90%">
     </td>
     <td width="50%" align="center">
-      <h3>Programming Languages</h3>
+      <h4>Programming Languages</h4>
       <img src="./data/languages.png" alt="Time Spent by Language" width="90%">
     </td>
   </tr>

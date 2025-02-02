@@ -1,15 +1,9 @@
 const vega = require('vega');
 const { chartConfigs } = require('./configs');
 
-const ALL_TIME_COLOR = '#c4dbf7';
-const LAST_7_DAYS_COLOR = '#c6efbf';
-const TODAY_COLOR = '#fba097';
-
-const fillOpacityMap = {
-  'all_time': 0.1,
-  'last_7_days': 0.5,
-  'today': 0.5
-}
+const ALL_TIME_COLOR = '#FF8343';
+const LAST_7_DAYS_COLOR = '#179BAE';
+const TODAY_COLOR = '#F1DEC6';
 
 exports.createRadarChart = async function(datasets, field) {
   // Validate input data
@@ -135,7 +129,7 @@ exports.createRadarChart = async function(datasets, field) {
                 "stroke": {"scale": "color", "field": "period"},
                 "strokeWidth": {"value": 2},
                 "fill": {"scale": "color", "field": "period"},
-                "fillOpacity": {"value": 0.5}
+                "fillOpacity": {"value": 0.75}
               }
             }
           },

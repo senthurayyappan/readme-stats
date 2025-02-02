@@ -3,127 +3,127 @@
     "username": "senthurayyappan",
     "user_id": "senthurayyappan",
     "start": "2025-02-02T00:01:16-05:00",
-    "end": "2025-02-02T02:42:51-05:00",
+    "end": "2025-02-02T02:53:52-05:00",
     "status": "ok",
-    "total_seconds": 9489,
+    "total_seconds": 10460,
     "daily_average": 0,
     "days_including_holidays": 0,
     "range": "today",
     "human_readable_range": "Today",
-    "human_readable_total": "2 hrs 38 mins",
+    "human_readable_total": "2 hrs 54 mins",
     "human_readable_daily_average": "",
     "is_coding_activity_visible": false,
     "is_other_usage_visible": false,
     "editors": [
       {
-        "digital": "2:38:9",
+        "digital": "2:54:20",
         "hours": 2,
-        "minutes": 38,
+        "minutes": 54,
         "name": "Cursor",
         "percent": 100,
-        "seconds": 9,
-        "text": "2 hrs 38 mins",
-        "total_seconds": 9489
+        "seconds": 20,
+        "text": "2 hrs 54 mins",
+        "total_seconds": 10460
       }
     ],
     "languages": [
       {
-        "digital": "2:16:9",
+        "digital": "2:23:10",
         "hours": 2,
-        "minutes": 16,
+        "minutes": 23,
         "name": "JavaScript",
-        "percent": 86.11,
-        "seconds": 9,
-        "text": "2 hrs 16 mins",
-        "total_seconds": 8169
+        "percent": 82.14,
+        "seconds": 10,
+        "text": "2 hrs 23 mins",
+        "total_seconds": 8590
       },
       {
-        "digital": "0:16:57",
+        "digital": "0:18:3",
         "hours": 0,
-        "minutes": 16,
+        "minutes": 18,
         "name": "JSON",
-        "percent": 10.72,
-        "seconds": 57,
-        "text": "0 hrs 17 mins",
-        "total_seconds": 1017
+        "percent": 10.36,
+        "seconds": 3,
+        "text": "0 hrs 18 mins",
+        "total_seconds": 1083
       },
       {
-        "digital": "0:2:29",
+        "digital": "0:5:42",
         "hours": 0,
-        "minutes": 2,
+        "minutes": 5,
         "name": "Bash",
-        "percent": 1.57,
-        "seconds": 29,
-        "text": "0 hrs 2 mins",
-        "total_seconds": 149
+        "percent": 3.27,
+        "seconds": 42,
+        "text": "0 hrs 6 mins",
+        "total_seconds": 342
       },
       {
-        "digital": "0:1:37",
+        "digital": "0:4:13",
         "hours": 0,
-        "minutes": 1,
-        "name": "YAML",
-        "percent": 1.02,
-        "seconds": 37,
-        "text": "0 hrs 2 mins",
-        "total_seconds": 97
-      },
-      {
-        "digital": "0:0:55",
-        "hours": 0,
-        "minutes": 0,
+        "minutes": 4,
         "name": "Markdown",
-        "percent": 0.58,
-        "seconds": 55,
-        "text": "0 hrs 1 mins",
-        "total_seconds": 55
+        "percent": 2.42,
+        "seconds": 13,
+        "text": "0 hrs 4 mins",
+        "total_seconds": 253
+      },
+      {
+        "digital": "0:3:10",
+        "hours": 0,
+        "minutes": 3,
+        "name": "YAML",
+        "percent": 1.82,
+        "seconds": 10,
+        "text": "0 hrs 3 mins",
+        "total_seconds": 190
       }
     ],
     "machines": [
       {
-        "digital": "2:38:9",
+        "digital": "2:54:20",
         "hours": 2,
-        "minutes": 38,
+        "minutes": 54,
         "name": "stan",
         "percent": 100,
-        "seconds": 9,
-        "text": "2 hrs 38 mins",
-        "total_seconds": 9489
+        "seconds": 20,
+        "text": "2 hrs 54 mins",
+        "total_seconds": 10460
       }
     ],
     "projects": [
       {
-        "digital": "2:38:9",
+        "digital": "2:54:20",
         "hours": 2,
-        "minutes": 38,
+        "minutes": 54,
         "name": "senthurayyappan",
         "percent": 100,
-        "seconds": 9,
-        "text": "2 hrs 38 mins",
-        "total_seconds": 9489
+        "seconds": 20,
+        "text": "2 hrs 54 mins",
+        "total_seconds": 10460
       }
     ],
     "operating_systems": [
       {
-        "digital": "2:38:9",
+        "digital": "2:54:20",
         "hours": 2,
-        "minutes": 38,
+        "minutes": 54,
         "name": "Windows",
         "percent": 100,
-        "seconds": 9,
-        "text": "2 hrs 38 mins",
-        "total_seconds": 9489
+        "seconds": 20,
+        "text": "2 hrs 54 mins",
+        "total_seconds": 10460
       }
     ],
     "categories": [
       {
-        "digital": "2:38:9",
+        "digital": "2:54:20",
         "hours": 2,
-        "minutes": 38,
+        "minutes": 54,
         "name": "coding",
         "percent": 100,
-        "seconds": 9,
-        "text": "2 hrs 38 mins",
-        "total_seconds": 9489
+        "seconds": 20,
+        "text": "2 hrs 54 mins",
+        "total_seconds": 10460
       }
     ]
   }
