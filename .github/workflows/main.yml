@@ -19,12 +19,11 @@ jobs:
       - name: Checkout main repository
         uses: actions/checkout@v4
 
-      - name: Checkout data branch
+      - name: Setup data branch
         run: |
           git fetch
           git checkout -b data origin/data 2>/dev/null || git checkout -b data
-          git checkout main
-          
+
       - name: Install canvas dependencies
         run: |
           sudo apt-get update
@@ -48,8 +47,6 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git checkout data
           git add data/
           git commit -m "Update stats for ${{ github.run_id }}" || exit 0
           git push origin data
-          git checkout main
