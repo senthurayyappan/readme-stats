@@ -1,11 +1,11 @@
 // Define a common set of system-safe fonts
 const FONT_FAMILY = 'Arial, sans-serif';
-const FONT_COLOR = "#666666";
-const FONT_SIZE = 14;
-const LABEL_COLOR = "#ffffff";
+const FONT_COLOR = "#7c848c";
+const FONT_SIZE = 12;
+const LABEL_COLOR = "#bfc6cc";
 
-exports.ALL_TIME_COLOR = '#A1D6CB';
-exports.LAST_7_DAYS_COLOR = '#FFF574';
+exports.ALL_TIME_COLOR = '#0f452d';
+exports.LAST_7_DAYS_COLOR = '#31b74c';
 
 exports.chartConfigs = {
   projects: {

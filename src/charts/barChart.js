@@ -46,7 +46,7 @@ exports.createBarChart = async function(datasets, field) {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": config.width,
     "height": itemCount * 12,
-    "padding": "5",
+    "padding": "10",
     "layout": {
       "legend": {
         "bottom": {
@@ -158,7 +158,7 @@ exports.createBarChart = async function(datasets, field) {
             "text": {"field": "name"},
             "fontSize": {"value": config.fontSize},
             "font": {"value": config.fontFamily},
-            "fill": {"value": config.fontColor},
+            "fill": {"value": config.labelColor},
             "align": {"value": "left"},
             "baseline": {"value": "middle"}
 

@@ -33,7 +33,7 @@ exports.createRadarChart = async function(datasets, field) {
       
       return {
         period: dataset.period,
-        language: axisName,
+        fieldName: axisName,
         percent: item ? Math.min(item.percent, 50) : 0,
         actualPercent: item ? item.percent : 0,
         hours: totalMinutes / 60,
@@ -47,7 +47,7 @@ exports.createRadarChart = async function(datasets, field) {
     "description": "Radar chart showing coding time across different time periods",
     "width": config.width,
     "height": config.height,
-    "padding": 50,
+    "padding": 100,
     "autosize": {"type": "none", "contains": "padding"},
 
     "signals": [
@@ -65,7 +65,7 @@ exports.createRadarChart = async function(datasets, field) {
         "transform": [
           {
             "type": "aggregate",
-            "groupby": ["language"]
+            "groupby": ["fieldName"]
           }
         ]
       }
@@ -119,12 +119,12 @@ exports.createRadarChart = async function(datasets, field) {
             "encode": {
               "enter": {
                 "interpolate": {"value": "linear-closed"},
-                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.language))"},
-                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.language))"},
+                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.fieldName))"},
+                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.fieldName))"},
                 "stroke": {"scale": "color", "field": "period"},
                 "strokeWidth": {"value": 2},
                 "fill": {"scale": "color", "field": "period"},
-                "fillOpacity": {"value": 0.8}
+                "fillOpacity": {"value": 0.6}
               }
             }
           },
@@ -134,8 +134,8 @@ exports.createRadarChart = async function(datasets, field) {
             "from": {"data": "facet"},
             "encode": {
               "enter": {
-                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.language))"},
-                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.language))"},
+                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.fieldName))"},
+                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.fieldName))"},
                 "size": {"value": 50},
                 "fill": {"scale": "color", "field": "period"},
                 "stroke": {"value": "white"},
@@ -149,8 +149,8 @@ exports.createRadarChart = async function(datasets, field) {
             "from": {"data": "facet"},
             "encode": {
               "enter": {
-                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.language))"},
-                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.language))"},
+                "x": {"signal": "scale('radial', datum.percent) * cos(scale('angular', datum.fieldName))"},
+                "y": {"signal": "scale('radial', datum.percent) * sin(scale('angular', datum.fieldName))"},
                 "text": [
                   {
                     "test": "datum.percent >= 5",
@@ -162,7 +162,7 @@ exports.createRadarChart = async function(datasets, field) {
                 ],
                 "align": [
                   {
-                    "test": "abs(scale('angular', datum.language)) > PI / 2",
+                    "test": "abs(scale('angular', datum.fieldName)) > PI / 2",
                     "value": "right"
                   },
                   {
@@ -171,11 +171,11 @@ exports.createRadarChart = async function(datasets, field) {
                 ],
                 "baseline": [
                   {
-                    "test": "scale('angular', datum.language) > 0",
+                    "test": "scale('angular', datum.fieldName) > 0",
                     "value": "bottom"
                   },
                   {
-                    "test": "scale('angular', datum.language) < 0",
+                    "test": "scale('angular', datum.fieldName) < 0",
                     "value": "top"
                   },
                   {
@@ -184,7 +184,7 @@ exports.createRadarChart = async function(datasets, field) {
                 ],
                 "dx": [
                   {
-                    "test": "abs(scale('angular', datum.language)) > PI / 2",
+                    "test": "abs(scale('angular', datum.fieldName)) > PI / 2",
                     "value": -5
                   },
                   {
@@ -193,11 +193,11 @@ exports.createRadarChart = async function(datasets, field) {
                 ],
                 "dy": [
                   {
-                    "test": "scale('angular', datum.language) > 0",
+                    "test": "scale('angular', datum.fieldName) > 0",
                     "value": -5
                   },
                   {
-                    "test": "scale('angular', datum.language) < 0",
+                    "test": "scale('angular', datum.fieldName) < 0",
                     "value": 5
                   },
                   {
@@ -221,9 +221,9 @@ exports.createRadarChart = async function(datasets, field) {
           "enter": {
             "x": {"value": 0},
             "y": {"value": 0},
-            "x2": {"signal": "radius * cos(scale('angular', datum.language))"},
-            "y2": {"signal": "radius * sin(scale('angular', datum.language))"},
-            "stroke": {"value": "lightgray"},
+            "x2": {"signal": "radius * cos(scale('angular', datum.fieldName))"},
+            "y2": {"signal": "radius * sin(scale('angular', datum.fieldName))"},
+            "stroke": {"value": "gray"},
             "strokeWidth": {"value": 1}
           }
         }
@@ -235,12 +235,12 @@ exports.createRadarChart = async function(datasets, field) {
         "zindex": 1,
         "encode": {
           "enter": {
-            "x": {"signal": "(radius + 15) * cos(scale('angular', datum.language))"},
-            "y": {"signal": "(radius + 15) * sin(scale('angular', datum.language))"},
-            "text": {"field": "language"},
+            "x": {"signal": "(radius + 15) * cos(scale('angular', datum.fieldName))"},
+            "y": {"signal": "(radius + 15) * sin(scale('angular', datum.fieldName))"},
+            "text": {"field": "fieldName"},
             "align": [
               {
-                "test": "abs(scale('angular', datum.language)) > PI / 2",
+                "test": "abs(scale('angular', datum.fieldName)) > PI / 2",
                 "value": "right"
               },
               {
@@ -249,10 +249,10 @@ exports.createRadarChart = async function(datasets, field) {
             ],
             "baseline": [
               {
-                "test": "scale('angular', datum.language) > 0", "value": "top"
+                "test": "scale('angular', datum.fieldName) > 0", "value": "top"
               },
               {
-                "test": "scale('angular', datum.language) == 0", "value": "middle"
+                "test": "scale('angular', datum.fieldName) == 0", "value": "middle"
               },
               {
                 "value": "bottom"
