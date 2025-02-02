@@ -45,22 +45,22 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           
-          # Ensure data directory exists
-          mkdir -p data
+          # Save data directory content
+          mkdir -p /tmp/data-backup
+          cp -r data/* /tmp/data-backup/ || true
           
-          # Create a new orphan branch (no history)
+          # Create a new orphan branch
           git checkout --orphan data
           
-          # Remove everything except the data directory
+          # Remove everything
           git rm -rf .
           git clean -fdx
           
-          # Restore data directory if it was removed
-          git checkout HEAD -- data/ 2>/dev/null || true
+          # Restore data
+          mkdir -p data
+          cp -r /tmp/data-backup/* data/ || true
           
-          # Only keep and commit the data directory
+          # Commit and push
           git add data/
           git commit -m "Update stats for ${{ github.run_id }}" || exit 0
-          
-          # Force push to data branch
           git push origin data --force
