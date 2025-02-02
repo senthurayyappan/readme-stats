@@ -18,11 +18,15 @@ jobs:
     steps:
       - name: Checkout main repository
         uses: actions/checkout@v4
+        with:
+          ref: main  # Explicitly checkout main branch first
 
       - name: Setup data branch
         run: |
-          git fetch
-          git checkout -b data origin/data 2>/dev/null || git checkout -b data
+          git fetch origin data || true  # Try to fetch data branch, don't fail if it doesn't exist
+          git checkout -b data || git checkout data  # Create or checkout existing data branch
+          git reset --hard origin/main  # Reset to main branch content
+          git push origin data --force || true  # Force push to data branch, don't fail if first time
 
       - name: Install canvas dependencies
         run: |
