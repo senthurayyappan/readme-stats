@@ -35,9 +35,11 @@
 
   <tr style="background: transparent;">
     <td width="50%" align="center" style="background: transparent; border: 1px solid #7c848c; border-radius: 5px;">
+      <h3 style="color: #7c848c;">Projects</h3>
       <img src="/../../raw/data/data/projects-radar.svg" alt="Time Spent by Project" width="100%">
     </td>
     <td width="50%" align="center" style="background: transparent; border: 1px solid #7c848c; border-radius: 5px;">
+      <h3 style="color: #7c848c;">Languages</h3>
       <img src="/../../raw/data/data/languages-radar.svg" alt="Time Spent by Language" width="100%">
     </td>
   </tr>
@@ -52,7 +54,7 @@
   </tr>
 </table>
 
-<div align="center">
+<div align="center" style="display: flex; justify-content: space-between; width: 100%; margin: 0 auto;">
   <a href="https://github.com/sponsors/senthurayyappan"><img alt="GitHub Sponsors" src="https://img.shields.io/github/sponsors/senthurayyappan"></a>
   <a href="https://www.instagram.com/senthurayyappan/"><img alt="Instagram" src="https://img.shields.io/badge/-Instagram-E1306C"></a>
   <a href="https://www.linkedin.com/in/imsenthur/"><img alt="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-blue"></a>

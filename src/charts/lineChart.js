@@ -17,7 +17,7 @@ exports.createlineChart = async function createlineChart(repositories) {
   repositories.forEach(repo => {
     Object.entries(repo.traffic).forEach(([date, data]) => {
       transformedData.push({
-        date: date.split('T')[0].slice(5, 10),
+        date: date.slice(5, 10),
         views: data.totalViews,
         repository: repo.name.split('/')[1],
         totalViews: repoTotalViews.get(repo.name.split('/')[1]) // Add total views for sorting

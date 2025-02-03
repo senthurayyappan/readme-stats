@@ -1,5 +1,5 @@
 const vega = require('vega');
-const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR, SPLIT_LIMIT, FONT_FAMILY, FONT_COLOR, LABEL_COLOR, FONT_SIZE } = require('./configs');
+const { chartConfigs, ALL_TIME_COLOR, LAST_7_DAYS_COLOR, SPLIT_LIMIT, FONT_FAMILY, FONT_COLOR, LABEL_COLOR, FONT_SIZE, GITHUB_LIGHT_GRAY } = require('./configs');
 
 exports.createRadarChart = async function(datasets, field) {
   // Validate input data
@@ -47,7 +47,7 @@ exports.createRadarChart = async function(datasets, field) {
     "description": "Radar chart showing coding time across different time periods",
     "width": config.width,
     "height": config.height,
-    "padding": 80,
+    "padding": 60,
     "autosize": {"type": "none", "contains": "padding"},
 
     "signals": [
@@ -213,7 +213,7 @@ exports.createRadarChart = async function(datasets, field) {
                 ],
                 "fontSize": {"value": FONT_SIZE},
                 "font": {"value": FONT_FAMILY},
-                "fill": {"value": LABEL_COLOR}
+                "fill": {"value": GITHUB_LIGHT_GRAY}
               }
 
             }
@@ -267,10 +267,9 @@ exports.createRadarChart = async function(datasets, field) {
                 "value": "bottom"
               }
             ],
-            "fill": {"value": FONT_COLOR},
+            "fill": {"value": LABEL_COLOR},
             "font": {"value": FONT_FAMILY},
             "fontSize": {"value": FONT_SIZE}
-
           }
         }
       }

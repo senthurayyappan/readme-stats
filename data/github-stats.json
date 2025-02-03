@@ -2,13 +2,13 @@
   "publicRepos": 75,
   "followers": 72,
   "following": 37,
-  "totalStars": 638,
+  "totalStars": 644,
   "totalForks": 523,
   "totalPRs": 58,
   "totalIssues": 75,
   "contributions": {
-    "total": 3074,
-    "totalCommits": 2814,
+    "total": 3076,
+    "totalCommits": 2816,
     "byYear": {
       "2017": {
         "total": 46,
@@ -43,8 +43,8 @@
         "commits": 690
       },
       "2025": {
-        "total": 116,
-        "commits": 96
+        "total": 118,
+        "commits": 98
       }
     }
   },
@@ -137,10 +137,10 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 0,
-          "totalVisitors": 0,
-          "totalClones": 0,
-          "totalCloners": 0
+          "totalViews": 3,
+          "totalVisitors": 2,
+          "totalClones": 2,
+          "totalCloners": 2
         }
       }
     },
@@ -240,11 +240,11 @@
     },
     {
       "name": "neurobionics/onshape-robotics-toolkit",
-      "stars": 132,
+      "stars": 138,
       "forks": 14,
       "description": "A python library to facilitate interaction with Onshape's REST API",
       "url": "https://github.com/neurobionics/onshape-robotics-toolkit",
-      "combinedScore": 146,
+      "combinedScore": 152,
       "traffic": {
         "2025-01-21": {
           "totalViews": 47,
@@ -325,10 +325,10 @@
           "totalCloners": 2
         },
         "2025-02-03": {
-          "totalViews": 93,
-          "totalVisitors": 25,
-          "totalClones": 0,
-          "totalCloners": 0
+          "totalViews": 168,
+          "totalVisitors": 78,
+          "totalClones": 4,
+          "totalCloners": 4
         }
       }
     },
@@ -419,10 +419,10 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 16,
-          "totalVisitors": 2,
-          "totalClones": 0,
-          "totalCloners": 0
+          "totalViews": 23,
+          "totalVisitors": 4,
+          "totalClones": 2,
+          "totalCloners": 2
         }
       }
     },
@@ -513,8 +513,8 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 2,
-          "totalVisitors": 1,
+          "totalViews": 6,
+          "totalVisitors": 2,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -607,8 +607,8 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 0,
-          "totalVisitors": 0,
+          "totalViews": 62,
+          "totalVisitors": 10,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -795,8 +795,8 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 3,
-          "totalVisitors": 2,
+          "totalViews": 8,
+          "totalVisitors": 5,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -891,8 +891,8 @@
         "2025-02-03": {
           "totalViews": 2,
           "totalVisitors": 1,
-          "totalClones": 0,
-          "totalCloners": 0
+          "totalClones": 2,
+          "totalCloners": 2
         }
       }
     },
