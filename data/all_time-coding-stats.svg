@@ -21,7 +21,6 @@
         fill="#7c848c"
       >Total Hours:</text>
 
-
       <text 
         x="95%" 
         y="55" 
@@ -31,7 +30,7 @@
         font-weight="bold" 
         fill="#bfc6cc"
 
-      >93 hrs 2 mins</text>
+      >93 hrs 15 mins</text>
 
       <!-- Daily Average -->
       <text 
@@ -52,6 +51,6 @@
         font-size="14" 
         font-weight="bold" 
         fill="#276ee0"
-      >2 hrs 54 mins</text>
+      >2 hrs 55 mins</text>
     </svg>
   

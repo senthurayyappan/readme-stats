@@ -28,7 +28,6 @@ exports.createStatsCard = async function createStatsCard({ title, totalHours, da
         fill="${GITHUB_LIGHT_GRAY}"
       >Total Hours:</text>
 
-
       <text 
         x="95%" 
         y="55" 

@@ -52,7 +52,6 @@ exports.createBarChart = async function(datasets, field) {
         "bottom": {
           "anchor": "middle",
           "direction": "horizontal",
-          "center": true,
           "margin": 4
         }
       }
@@ -140,7 +139,7 @@ exports.createBarChart = async function(datasets, field) {
         "fill": "color",
         "orient": "bottom",
         "direction": "horizontal",
-        "labelColor": FONT_COLOR,
+        "labelColor": LABEL_COLOR,
         "labelFont": FONT_FAMILY,
         "labelFontSize": FONT_SIZE,
         "titlePadding": 5,

@@ -9,7 +9,7 @@
         font-size="14" 
         font-weight="bold" 
         fill="#7c848c"
-      >Last Week</text>
+      >Last 7 Days</text>
 
       <!-- Total Hours -->
       <text 
@@ -21,7 +21,6 @@
         fill="#7c848c"
       >Total Hours:</text>
 
-
       <text 
         x="95%" 
         y="55" 
@@ -31,7 +30,7 @@
         font-weight="bold" 
         fill="#bfc6cc"
 
-      >23 hrs 59 mins</text>
+      >24 hrs 12 mins</text>
 
       <!-- Daily Average -->
       <text 
@@ -52,6 +51,6 @@
         font-size="14" 
         font-weight="bold" 
         fill="#276ee0"
-      >4 hrs 0 mins</text>
+      >4 hrs 2 mins</text>
     </svg>
   
