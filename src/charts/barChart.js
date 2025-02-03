@@ -46,12 +46,13 @@ exports.createBarChart = async function(datasets, field) {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": config.width,
     "height": itemCount * 12,
-    "padding": "5",
+    "padding": "10",
     "layout": {
       "legend": {
         "bottom": {
           "anchor": "middle",
           "direction": "horizontal",
+          "margin": 4
         }
       }
     },
@@ -108,13 +109,8 @@ exports.createBarChart = async function(datasets, field) {
     "axes": [
       {
         "orient": "left", 
-        "scale": "name",
-        "domain": false,
-        "ticks": false,
-        "labelColor": LABEL_COLOR,
-        "labelFont": FONT_FAMILY,
-        "labelFontSize": FONT_SIZE,
-        "labelPadding": 5
+        "scale": "name", 
+        "labels": false
       },
       {
         "orient": "bottom", 
@@ -126,6 +122,8 @@ exports.createBarChart = async function(datasets, field) {
         "labelFontSize": 10,
         "format": "s",
         "formatType": "number",
+
+
         "encode": {
           "labels": {
             "update": {
@@ -160,26 +158,25 @@ exports.createBarChart = async function(datasets, field) {
             "height": {"scale": "name", "band": 1},
             "x": {"scale": "value", "field": "y0"},
             "x2": {"scale": "value", "field": "y1"},
-            "fill": {"scale": "color", "field": "category"},
+            "fill": {"scale": "color", "field": "category"}
           }
         }
       },
-
       {
         "type": "text",
         "from": {"data": "aggregated"},
         "encode": {
           "enter": {
             "y": {"scale": "name", "field": "name", "band": 0.5},
-            "fontSize": {"value": FONT_SIZE},
+            "x": {"value": 5},
+            "text": {
+              "signal": "datum.name + ' (' + format(datum.total / 3600, '~d') + 'h)'"
+            },
+            "fontSize": {"value": 10},
             "font": {"value": FONT_FAMILY},
             "fill": {"value": LABEL_COLOR},
-            "baseline": {"value": "middle"}
-          },
-          "update": {
-            "x": {"scale": "value", "field": "total", "offset": 5},
             "align": {"value": "left"},
-            "text": {"signal": "format(datum.total / 3600, '~d') + 'h'"}
+            "baseline": {"value": "middle"}
           }
         }
       }
