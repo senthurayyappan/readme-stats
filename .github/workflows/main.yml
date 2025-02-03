@@ -33,7 +33,7 @@ jobs:
         env:
           WAKAPI_TOKEN: ${{ secrets.WAKAPI_TOKEN }}
           WAKAPI_USERNAME: ${{ secrets.WAKAPI_USERNAME }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Setup and push to data branch
         run: |
