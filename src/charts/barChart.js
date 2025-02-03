@@ -170,12 +170,11 @@ exports.createBarChart = async function(datasets, field) {
             "y": {"scale": "name", "field": "name", "band": 0.5},
             "x": {"value": 5},
             "text": {"field": "name"},
-            "fontSize": {"value": FONT_SIZE},
+            "fontSize": {"value": 10},
             "font": {"value": FONT_FAMILY},
             "fill": {"value": LABEL_COLOR},
             "align": {"value": "left"},
             "baseline": {"value": "middle"}
-
           }
         }
       },
