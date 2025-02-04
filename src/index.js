@@ -18,66 +18,72 @@ async function run() {
     const githubToken = process.env.GH_TOKEN || config.githubToken;
     const intervals = config.intervals;
 
-    // Fetch data for all intervals
-    const data = await fetchWakapiUserStats(apiKey, username, intervals);
     const dataDir = ensureDataDir(path.join(__dirname, '..'));
 
-    // Save JSON data for each interval
-    for (const interval of intervals) {
-      const jsonPath = path.join(dataDir, `wakapi-stats-${interval}.json`);
-      saveJson(jsonPath, data[interval]);
-      console.log(`Saved Wakapi statistics for ${interval} to data/wakapi-stats-${interval}.json`);
+    let wakapiStatsGenerated = false;
+    if (apiKey && username) {
+      try {
+        const data = await fetchWakapiUserStats(apiKey, username, intervals);
+        
+        if (data) {
+          for (const interval of intervals) {
+            const jsonPath = path.join(dataDir, `wakapi-stats-${interval}.json`);
+
+            saveJson(jsonPath, data[interval]);
+            console.log(`Saved Wakapi statistics for ${interval} to data/wakapi-stats-${interval}.json`);
+          }
+
+          // Generate and save combined radar charts and bar charts
+          const chartFields = ['projects', 'languages'];
+          for (const field of chartFields) {
+            const datasets = intervals.map(interval => ({
+              period: interval,
+              data: data[interval].data
+            }));
+
+            // Generate combined radar chart
+            const radarChartBuffer = await createRadarChart(datasets, field);
+            const radarChartPath = path.join(dataDir, `${field}-radar.svg`);
+            saveChart(radarChartBuffer, radarChartPath);
+            console.log(`Generated combined ${field} radar chart: ${radarChartPath}`);
+
+            // Generate bar chart
+            const barChartBuffer = await createBarChart(datasets, field);
+            const barChartPath = path.join(dataDir, `${field}-bar.svg`);
+            saveChart(barChartBuffer, barChartPath);
+            console.log(`Generated ${field} bar chart: ${barChartPath}`);
+          }
+
+          for (const interval of intervals) {
+            const stats = data[interval].data;
+            const statsBuffer = await createWakapiStatsCard({
+              title: config.intervalLabels[interval],
+              totalHours: stats.human_readable_total,
+              dailyAverage: stats.human_readable_daily_average,
+              period: stats.human_readable_range
+            });
+            const statsPath = path.join(dataDir, `${interval}-coding-stats.svg`);
+            saveChart(statsBuffer, statsPath);
+            console.log(`Generated coding stats card for ${interval}: ${statsPath}`);
+          }
+
+          wakapiStatsGenerated = true;
+          console.log('Successfully fetched Wakapi statistics and generated charts');
+        }
+      } catch (wakapiError) {
+        console.log('Failed to fetch Wakapi stats:', wakapiError.message);
+      }
     }
 
-    // Generate and save combined radar charts and bar charts
-    const chartFields = ['projects', 'languages'];
-    for (const field of chartFields) {
-      // Create datasets array with period information
-      const datasets = intervals.map(interval => ({
-        period: interval,
-        data: data[interval].data
-      }));
-
-      // Generate combined radar chart
-      const radarChartBuffer = await createRadarChart(datasets, field);
-      const radarChartPath = path.join(dataDir, `${field}-radar.svg`);
-      saveChart(radarChartBuffer, radarChartPath);
-      console.log(`Generated combined ${field} radar chart: ${radarChartPath}`);
-
-
-      // Generate bar chart
-      const barChartBuffer = await createBarChart(datasets, field);
-      const barChartPath = path.join(dataDir, `${field}-bar.svg`);
-      saveChart(barChartBuffer, barChartPath);
-      console.log(`Generated ${field} bar chart: ${barChartPath}`);
+    if (!wakapiStatsGenerated) {
+      console.log('Skipping Wakapi stats generation - authentication failed or no credentials provided');
     }
-
-    // Generate stats cards for both intervals
-    for (const interval of intervals) {
-      const stats = data[interval].data;
-      
-      // Generate combined stats card
-      const statsBuffer = await createWakapiStatsCard({
-        title: config.intervalLabels[interval],
-        totalHours: stats.human_readable_total,
-        dailyAverage: stats.human_readable_daily_average,
-        period: stats.human_readable_range
-
-      });
-      const statsPath = path.join(dataDir, `${interval}-coding-stats.svg`);
-      saveChart(statsBuffer, statsPath);
-      console.log(`Generated coding stats card for ${interval}: ${statsPath}`);
-    }
-
-    console.log('Successfully fetched Wakapi statistics and generated charts');
 
     // Fetch GitHub stats
     const githubStats = await getUserGitHubStats('senthurayyappan', githubToken);
-    // save this to a json file
     const githubStatsPath = path.join(dataDir, 'github-stats.json');
     saveJson(githubStatsPath, githubStats);
 
-    // let's generate some stat cards for the github stats: total contributions, total PRs merged, total stars gained, total forks
     const contributionsCardBuffer = await createGithubStatsCard({
       value: githubStats.contributions.total,
       descriptionOne: 'Contributions', 
@@ -119,10 +125,10 @@ async function run() {
     const forksCardPath = path.join(dataDir, `forks-card.svg`);
     saveChart(forksCardBuffer, forksCardPath);
 
-    // let's generate an area chart for the github stats: total views
     const trafficChartBuffer = await createlineChart(githubStats.topRepositories.slice(0, 5));
     const trafficChartPath = path.join(dataDir, `traffic-chart.svg`);
     saveChart(trafficChartBuffer, trafficChartPath);
+
   
   } catch (error) {
     console.error(error);
