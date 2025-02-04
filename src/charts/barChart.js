@@ -45,7 +45,7 @@ exports.createBarChart = async function(datasets, field) {
   const spec = {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": config.width,
-    "height": itemCount * 15,
+    "height": itemCount * 17,
     "padding": "30",
     "layout": {
       "legend": {
@@ -172,7 +172,7 @@ exports.createBarChart = async function(datasets, field) {
             "text": {
               "signal": "datum.name + ' (' + format(datum.total / 3600, '~d') + 'h)'"
             },
-            "fontSize": {"value": 10},
+            "fontSize": {"value": FONT_SIZE},
             "font": {"value": FONT_FAMILY},
             "fill": {"value": LABEL_COLOR},
             "align": {"value": "left"},

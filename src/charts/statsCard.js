@@ -86,6 +86,7 @@ exports.createGithubStatsCard = async function createGithubStatsCard({ value, de
         text-anchor="middle" 
         font-family="${FONT_FAMILY}" 
         font-size="${FONT_SIZE}" 
+        font-weight="bold" 
         fill="${GITHUB_WHITE}"
       >${descriptionOne}</text>
 
