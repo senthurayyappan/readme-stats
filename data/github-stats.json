@@ -2,13 +2,13 @@
   "publicRepos": 75,
   "followers": 72,
   "following": 37,
-  "totalStars": 644,
+  "totalStars": 647,
   "totalForks": 523,
   "totalPRs": 58,
-  "totalIssues": 75,
+  "totalIssues": 76,
   "contributions": {
-    "total": 3077,
-    "totalCommits": 2817,
+    "total": 3081,
+    "totalCommits": 2820,
     "byYear": {
       "2017": {
         "total": 46,
@@ -43,8 +43,8 @@
         "commits": 690
       },
       "2025": {
-        "total": 119,
-        "commits": 99
+        "total": 123,
+        "commits": 102
       }
     }
   },
@@ -58,12 +58,6 @@
       "url": "https://github.com/neurobionics/neurobionicspi",
       "combinedScore": 401,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 17,
-          "totalVisitors": 4,
-          "totalClones": 1,
-          "totalCloners": 1
-        },
         "2025-01-22": {
           "totalViews": 3,
           "totalVisitors": 2,
@@ -137,10 +131,16 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 10,
-          "totalVisitors": 6,
+          "totalViews": 20,
+          "totalVisitors": 8,
           "totalClones": 2,
           "totalCloners": 2
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
         }
       }
     },
@@ -152,12 +152,6 @@
       "url": "https://github.com/senthurayyappan/anton",
       "combinedScore": 198,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 14,
-          "totalVisitors": 6,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 5,
           "totalVisitors": 4,
@@ -233,6 +227,12 @@
         "2025-02-03": {
           "totalViews": 3,
           "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -240,18 +240,12 @@
     },
     {
       "name": "neurobionics/onshape-robotics-toolkit",
-      "stars": 138,
+      "stars": 141,
       "forks": 14,
       "description": "A python library to facilitate interaction with Onshape's REST API",
       "url": "https://github.com/neurobionics/onshape-robotics-toolkit",
-      "combinedScore": 152,
+      "combinedScore": 155,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 47,
-          "totalVisitors": 23,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 27,
           "totalVisitors": 14,
@@ -325,10 +319,16 @@
           "totalCloners": 2
         },
         "2025-02-03": {
-          "totalViews": 176,
-          "totalVisitors": 82,
-          "totalClones": 4,
-          "totalCloners": 4
+          "totalViews": 235,
+          "totalVisitors": 101,
+          "totalClones": 29,
+          "totalCloners": 12
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
         }
       }
     },
@@ -340,12 +340,6 @@
       "url": "https://github.com/neurobionics/opensourceleg",
       "combinedScore": 79,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 25,
-          "totalVisitors": 6,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 9,
           "totalVisitors": 6,
@@ -419,10 +413,16 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 23,
-          "totalVisitors": 4,
-          "totalClones": 2,
-          "totalCloners": 2
+          "totalViews": 70,
+          "totalVisitors": 5,
+          "totalClones": 8,
+          "totalCloners": 5
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
         }
       }
     },
@@ -434,12 +434,6 @@
       "url": "https://github.com/senthurayyappan/blendmsh",
       "combinedScore": 48,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 6,
-          "totalVisitors": 4,
-          "totalClones": 1,
-          "totalCloners": 1
-        },
         "2025-01-22": {
           "totalViews": 3,
           "totalVisitors": 2,
@@ -513,8 +507,14 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 6,
-          "totalVisitors": 2,
+          "totalViews": 23,
+          "totalVisitors": 3,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2025-02-04": {
+          "totalViews": 1,
+          "totalVisitors": 1,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -528,12 +528,6 @@
       "url": "https://github.com/neurobionics/TMotorCANControl",
       "combinedScore": 48,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 25,
-          "totalVisitors": 8,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 8,
           "totalVisitors": 3,
@@ -607,8 +601,14 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 62,
-          "totalVisitors": 10,
+          "totalViews": 70,
+          "totalVisitors": 13,
+          "totalClones": 2,
+          "totalCloners": 1
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -622,12 +622,6 @@
       "url": "https://github.com/neurobionics/rob311",
       "combinedScore": 47,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 0,
-          "totalVisitors": 0,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 0,
           "totalVisitors": 0,
@@ -705,6 +699,12 @@
           "totalVisitors": 0,
           "totalClones": 0,
           "totalCloners": 0
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
         }
       }
     },
@@ -716,12 +716,6 @@
       "url": "https://github.com/senthurayyappan/import-G-code",
       "combinedScore": 45,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 21,
-          "totalVisitors": 8,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 34,
           "totalVisitors": 12,
@@ -795,8 +789,14 @@
           "totalCloners": 0
         },
         "2025-02-03": {
-          "totalViews": 8,
-          "totalVisitors": 5,
+          "totalViews": 20,
+          "totalVisitors": 11,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -810,12 +810,6 @@
       "url": "https://github.com/senthurayyappan/Arboc",
       "combinedScore": 34,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 9,
-          "totalVisitors": 1,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 0,
           "totalVisitors": 0,
@@ -893,6 +887,12 @@
           "totalVisitors": 1,
           "totalClones": 2,
           "totalCloners": 2
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
         }
       }
     },
@@ -904,12 +904,6 @@
       "url": "https://github.com/senthurayyappan/oslsim",
       "combinedScore": 23,
       "traffic": {
-        "2025-01-21": {
-          "totalViews": 0,
-          "totalVisitors": 0,
-          "totalClones": 0,
-          "totalCloners": 0
-        },
         "2025-01-22": {
           "totalViews": 1,
           "totalVisitors": 1,
@@ -985,6 +979,12 @@
         "2025-02-03": {
           "totalViews": 2,
           "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2025-02-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
           "totalClones": 0,
           "totalCloners": 0
         }

@@ -3,34 +3,34 @@
     "username": "senthurayyappan",
     "user_id": "senthurayyappan",
     "start": "2025-01-01T12:03:10-05:00",
-    "end": "2025-02-03T11:33:40-05:00",
+    "end": "2025-02-03T22:46:10-05:00",
     "status": "ok",
-    "total_seconds": 353805,
-    "daily_average": 11056.40625,
-    "days_including_holidays": 32,
+    "total_seconds": 358739,
+    "daily_average": 10870.878787878788,
+    "days_including_holidays": 33,
     "range": "all_time",
     "human_readable_range": "All Time",
-    "human_readable_total": "98 hrs 17 mins",
-    "human_readable_daily_average": "3 hrs 4 mins",
+    "human_readable_total": "99 hrs 39 mins",
+    "human_readable_daily_average": "3 hrs 1 mins",
     "is_coding_activity_visible": false,
     "is_other_usage_visible": false,
     "editors": [
       {
-        "digital": "94:13:1",
-        "hours": 94,
-        "minutes": 13,
+        "digital": "95:35:16",
+        "hours": 95,
+        "minutes": 35,
         "name": "Cursor",
-        "percent": 95.86,
-        "seconds": 1,
-        "text": "94 hrs 13 mins",
-        "total_seconds": 339181
+        "percent": 95.92,
+        "seconds": 16,
+        "text": "95 hrs 35 mins",
+        "total_seconds": 344116
       },
       {
         "digital": "4:3:52",
         "hours": 4,
         "minutes": 3,
         "name": "Vscode",
-        "percent": 4.14,
+        "percent": 4.08,
         "seconds": 52,
         "text": "4 hrs 4 mins",
         "total_seconds": 14632
@@ -38,61 +38,61 @@
     ],
     "languages": [
       {
-        "digital": "45:56:47",
-        "hours": 45,
-        "minutes": 56,
+        "digital": "46:3:48",
+        "hours": 46,
+        "minutes": 3,
         "name": "Python",
-        "percent": 46.76,
-        "seconds": 47,
-        "text": "45 hrs 57 mins",
-        "total_seconds": 165407
+        "percent": 46.23,
+        "seconds": 48,
+        "text": "46 hrs 4 mins",
+        "total_seconds": 165828
       },
       {
-        "digital": "13:52:58",
-        "hours": 13,
-        "minutes": 52,
+        "digital": "14:18:18",
+        "hours": 14,
+        "minutes": 18,
         "name": "unknown",
-        "percent": 14.13,
-        "seconds": 58,
-        "text": "13 hrs 53 mins",
-        "total_seconds": 49978
+        "percent": 14.36,
+        "seconds": 18,
+        "text": "14 hrs 18 mins",
+        "total_seconds": 51498
       },
       {
-        "digital": "12:56:46",
+        "digital": "12:58:21",
         "hours": 12,
-        "minutes": 56,
+        "minutes": 58,
         "name": "JavaScript",
-        "percent": 13.17,
-        "seconds": 46,
-        "text": "12 hrs 57 mins",
-        "total_seconds": 46606
+        "percent": 13.02,
+        "seconds": 21,
+        "text": "12 hrs 58 mins",
+        "total_seconds": 46701
       },
       {
-        "digital": "11:37:4",
+        "digital": "11:42:28",
         "hours": 11,
-        "minutes": 37,
+        "minutes": 42,
         "name": "XML",
-        "percent": 11.82,
-        "seconds": 4,
-        "text": "11 hrs 37 mins",
-        "total_seconds": 41824
+        "percent": 11.75,
+        "seconds": 28,
+        "text": "11 hrs 42 mins",
+        "total_seconds": 42148
       },
       {
-        "digital": "4:37:27",
+        "digital": "4:37:58",
         "hours": 4,
         "minutes": 37,
         "name": "YAML",
-        "percent": 4.71,
-        "seconds": 27,
-        "text": "4 hrs 37 mins",
-        "total_seconds": 16647
+        "percent": 4.65,
+        "seconds": 58,
+        "text": "4 hrs 38 mins",
+        "total_seconds": 16678
       },
       {
         "digital": "3:4:38",
         "hours": 3,
         "minutes": 4,
         "name": "Markdown",
-        "percent": 3.13,
+        "percent": 3.09,
         "seconds": 38,
         "text": "3 hrs 5 mins",
         "total_seconds": 11078
@@ -102,7 +102,7 @@
         "hours": 2,
         "minutes": 2,
         "name": "JSON",
-        "percent": 2.07,
+        "percent": 2.04,
         "seconds": 9,
         "text": "2 hrs 2 mins",
         "total_seconds": 7329
@@ -112,50 +112,50 @@
         "hours": 1,
         "minutes": 37,
         "name": "TSX",
-        "percent": 1.65,
+        "percent": 1.62,
         "seconds": 1,
         "text": "1 hrs 37 mins",
         "total_seconds": 5821
       },
       {
-        "digital": "0:49:38",
+        "digital": "1:6:31",
+        "hours": 1,
+        "minutes": 6,
+        "name": "Rust",
+        "percent": 1.11,
+        "seconds": 31,
+        "text": "1 hrs 7 mins",
+        "total_seconds": 3991
+      },
+      {
+        "digital": "0:49:41",
         "hours": 0,
         "minutes": 49,
         "name": "TOML",
-        "percent": 0.84,
-        "seconds": 38,
+        "percent": 0.83,
+        "seconds": 41,
         "text": "0 hrs 50 mins",
-        "total_seconds": 2978
+        "total_seconds": 2981
       },
       {
         "digital": "0:28:44",
         "hours": 0,
         "minutes": 28,
         "name": "HTML",
-        "percent": 0.49,
+        "percent": 0.48,
         "seconds": 44,
         "text": "0 hrs 29 mins",
         "total_seconds": 1724
       },
       {
-        "digital": "0:25:49",
+        "digital": "0:19:39",
         "hours": 0,
-        "minutes": 25,
-        "name": "Rust",
-        "percent": 0.44,
-        "seconds": 49,
-        "text": "0 hrs 26 mins",
-        "total_seconds": 1549
-      },
-      {
-        "digital": "0:18:3",
-        "hours": 0,
-        "minutes": 18,
+        "minutes": 19,
         "name": "Bash",
-        "percent": 0.31,
-        "seconds": 3,
-        "text": "0 hrs 18 mins",
-        "total_seconds": 1083
+        "percent": 0.33,
+        "seconds": 39,
+        "text": "0 hrs 20 mins",
+        "total_seconds": 1179
       },
       {
         "digital": "0:9:16",
@@ -182,7 +182,7 @@
         "hours": 0,
         "minutes": 5,
         "name": "INI",
-        "percent": 0.1,
+        "percent": 0.09,
         "seconds": 37,
         "text": "0 hrs 6 mins",
         "total_seconds": 337
@@ -220,34 +220,34 @@
     ],
     "machines": [
       {
-        "digital": "89:42:49",
+        "digital": "89:46:14",
         "hours": 89,
-        "minutes": 42,
+        "minutes": 46,
         "name": "stan",
-        "percent": 91.28,
-        "seconds": 49,
-        "text": "89 hrs 43 mins",
-        "total_seconds": 322969
+        "percent": 90.08,
+        "seconds": 14,
+        "text": "89 hrs 46 mins",
+        "total_seconds": 323174
       },
       {
-        "digital": "8:0:2",
+        "digital": "8:22:47",
         "hours": 8,
-        "minutes": 0,
+        "minutes": 22,
         "name": "ROB-ROUSE-16U",
-        "percent": 8.14,
-        "seconds": 2,
-        "text": "8 hrs 0 mins",
-        "total_seconds": 28802
+        "percent": 8.41,
+        "seconds": 47,
+        "text": "8 hrs 23 mins",
+        "total_seconds": 30167
       },
       {
-        "digital": "0:33:59",
-        "hours": 0,
-        "minutes": 33,
+        "digital": "1:30:5",
+        "hours": 1,
+        "minutes": 30,
         "name": "raspberrypi",
-        "percent": 0.58,
-        "seconds": 59,
-        "text": "0 hrs 34 mins",
-        "total_seconds": 2039
+        "percent": 1.51,
+        "seconds": 5,
+        "text": "1 hrs 30 mins",
+        "total_seconds": 5405
       }
     ],
     "projects": [
@@ -256,7 +256,7 @@
         "hours": 26,
         "minutes": 38,
         "name": "onshape-robotics-toolkit",
-        "percent": 27.11,
+        "percent": 26.74,
         "seconds": 44,
         "text": "26 hrs 39 mins",
         "total_seconds": 95924
@@ -266,27 +266,27 @@
         "hours": 21,
         "minutes": 49,
         "name": "umv-codesign",
-        "percent": 22.21,
+        "percent": 21.9,
         "seconds": 38,
         "text": "21 hrs 50 mins",
         "total_seconds": 78578
       },
       {
-        "digital": "21:8:43",
+        "digital": "21:17:50",
         "hours": 21,
-        "minutes": 8,
+        "minutes": 17,
         "name": "senthurayyappan",
-        "percent": 21.52,
-        "seconds": 43,
-        "text": "21 hrs 9 mins",
-        "total_seconds": 76123
+        "percent": 21.37,
+        "seconds": 50,
+        "text": "21 hrs 18 mins",
+        "total_seconds": 76670
       },
       {
         "digital": "16:4:6",
         "hours": 16,
         "minutes": 4,
         "name": "ballbot-mujoco",
-        "percent": 16.35,
+        "percent": 16.12,
         "seconds": 6,
         "text": "16 hrs 4 mins",
         "total_seconds": 57846
@@ -296,7 +296,7 @@
         "hours": 5,
         "minutes": 18,
         "name": "neurobionicspi",
-        "percent": 5.4,
+        "percent": 5.33,
         "seconds": 23,
         "text": "5 hrs 18 mins",
         "total_seconds": 19103
@@ -306,7 +306,7 @@
         "hours": 4,
         "minutes": 14,
         "name": "onshape-api",
-        "percent": 4.32,
+        "percent": 4.26,
         "seconds": 54,
         "text": "4 hrs 15 mins",
         "total_seconds": 15294
@@ -316,20 +316,20 @@
         "hours": 1,
         "minutes": 57,
         "name": "senthurayyappan.github.io",
-        "percent": 1.98,
+        "percent": 1.96,
         "seconds": 2,
         "text": "1 hrs 57 mins",
         "total_seconds": 7022
       },
       {
-        "digital": "0:34:57",
-        "hours": 0,
-        "minutes": 34,
+        "digital": "1:41:3",
+        "hours": 1,
+        "minutes": 41,
         "name": "robot-nm",
-        "percent": 0.59,
-        "seconds": 57,
-        "text": "0 hrs 35 mins",
-        "total_seconds": 2097
+        "percent": 1.69,
+        "seconds": 3,
+        "text": "1 hrs 41 mins",
+        "total_seconds": 6063
       },
       {
         "digital": "0:20:6",
@@ -340,6 +340,16 @@
         "seconds": 6,
         "text": "0 hrs 20 mins",
         "total_seconds": 1206
+      },
+      {
+        "digital": "0:7:1",
+        "hours": 0,
+        "minutes": 7,
+        "name": "opensourceleg",
+        "percent": 0.12,
+        "seconds": 1,
+        "text": "0 hrs 7 mins",
+        "total_seconds": 421
       },
       {
         "digital": "0:5:12",
@@ -360,50 +370,40 @@
         "seconds": 0,
         "text": "0 hrs 5 mins",
         "total_seconds": 300
-      },
-      {
-        "digital": "0:0:0",
-        "hours": 0,
-        "minutes": 0,
-        "name": "opensourceleg",
-        "percent": 0,
-        "seconds": 0,
-        "text": "0 hrs 0 mins",
-        "total_seconds": 0
       }
     ],
     "operating_systems": [
       {
-        "digital": "89:42:49",
+        "digital": "89:46:14",
         "hours": 89,
-        "minutes": 42,
+        "minutes": 46,
         "name": "Windows",
-        "percent": 91.28,
-        "seconds": 49,
-        "text": "89 hrs 43 mins",
-        "total_seconds": 322969
+        "percent": 90.08,
+        "seconds": 14,
+        "text": "89 hrs 46 mins",
+        "total_seconds": 323174
       },
       {
-        "digital": "8:34:2",
-        "hours": 8,
-        "minutes": 34,
+        "digital": "9:52:53",
+        "hours": 9,
+        "minutes": 52,
         "name": "Linux",
-        "percent": 8.72,
-        "seconds": 2,
-        "text": "8 hrs 34 mins",
-        "total_seconds": 30842
+        "percent": 9.92,
+        "seconds": 53,
+        "text": "9 hrs 53 mins",
+        "total_seconds": 35573
       }
     ],
     "categories": [
       {
-        "digital": "98:16:44",
-        "hours": 98,
-        "minutes": 16,
+        "digital": "99:38:59",
+        "hours": 99,
+        "minutes": 38,
         "name": "coding",
         "percent": 100,
-        "seconds": 44,
-        "text": "98 hrs 17 mins",
-        "total_seconds": 353804
+        "seconds": 59,
+        "text": "99 hrs 39 mins",
+        "total_seconds": 358739
       },
       {
         "digital": "0:0:10",

@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - 'data/**'  # Ignore changes to data directory
   schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
+    - cron: '0 17 * * *'  # Run daily at 5:00 PM UTC
   workflow_dispatch:  # Allow manual triggers
 
 jobs:

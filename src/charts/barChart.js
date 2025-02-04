@@ -45,8 +45,8 @@ exports.createBarChart = async function(datasets, field) {
   const spec = {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": config.width,
-    "height": itemCount * 12,
-    "padding": "10",
+    "height": itemCount * 15,
+    "padding": "30",
     "layout": {
       "legend": {
         "bottom": {
