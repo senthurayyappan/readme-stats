@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update:readme": "node src/updateReadme.js",
+    "generate:stats": "node src/index.js"
   },
   "keywords": [],
   "author": "",
