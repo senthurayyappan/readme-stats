@@ -2,13 +2,13 @@
   "publicRepos": 75,
   "followers": 72,
   "following": 37,
-  "totalStars": 647,
+  "totalStars": 648,
   "totalForks": 523,
   "totalPRs": 58,
   "totalIssues": 76,
   "contributions": {
-    "total": 3082,
-    "totalCommits": 2821,
+    "total": 3083,
+    "totalCommits": 2822,
     "byYear": {
       "2017": {
         "total": 46,
@@ -43,8 +43,8 @@
         "commits": 690
       },
       "2025": {
-        "total": 124,
-        "commits": 103
+        "total": 125,
+        "commits": 104
       }
     }
   },
@@ -240,11 +240,11 @@
     },
     {
       "name": "neurobionics/onshape-robotics-toolkit",
-      "stars": 141,
+      "stars": 142,
       "forks": 14,
       "description": "A python library to facilitate interaction with Onshape's REST API",
       "url": "https://github.com/neurobionics/onshape-robotics-toolkit",
-      "combinedScore": 155,
+      "combinedScore": 156,
       "traffic": {
         "2025-01-22": {
           "totalViews": 27,
@@ -325,8 +325,8 @@
           "totalCloners": 12
         },
         "2025-02-04": {
-          "totalViews": 16,
-          "totalVisitors": 9,
+          "totalViews": 18,
+          "totalVisitors": 11,
           "totalClones": 0,
           "totalCloners": 0
         }
@@ -607,8 +607,8 @@
           "totalCloners": 1
         },
         "2025-02-04": {
-          "totalViews": 0,
-          "totalVisitors": 0,
+          "totalViews": 2,
+          "totalVisitors": 2,
           "totalClones": 0,
           "totalCloners": 0
         }

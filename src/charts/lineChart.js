@@ -35,8 +35,15 @@ exports.createlineChart = async function createlineChart(repositories) {
     "description": "Repository Traffic Line Chart",
     "width": 800,
     "height": 400,
-
-    "padding": 5,
+    "padding": 20,
+    
+    "title": {
+      "text": "Repository Views Over Time",
+      "font": FONT_FAMILY,
+      "fontSize": FONT_SIZE + 4,
+      "color": LABEL_COLOR,
+      "anchor": "middle",
+    },
 
     "data": [
       {
@@ -65,7 +72,7 @@ exports.createlineChart = async function createlineChart(repositories) {
       {
         "name": "color",
         "type": "ordinal",
-        "range": {"scheme": "greens"},
+        "range": {"scheme": "greenblue"},
         "domain": sortedRepos // Use the pre-sorted repository names
       }
     ],
@@ -101,6 +108,7 @@ exports.createlineChart = async function createlineChart(repositories) {
       {
         "fill": "color",
         "orient": "bottom",
+        "anchor": "middle",
         "labelFont": FONT_FAMILY,
         "labelFontSize": FONT_SIZE,
         "labelColor": LABEL_COLOR,
@@ -113,7 +121,6 @@ exports.createlineChart = async function createlineChart(repositories) {
             }
           }
         },
-        "sort": null // Remove the sort since we're pre-sorting the domain
       }
     ],
 
