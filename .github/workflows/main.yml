@@ -35,12 +35,6 @@ jobs:
           WAKAPI_USERNAME: ${{ secrets.WAKAPI_USERNAME }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Update README with Stats
-        run: node src/updateReadme.js
-        env:
-          WAKAPI_TOKEN: ${{ secrets.WAKAPI_TOKEN }}
-          WAKAPI_USERNAME: ${{ secrets.WAKAPI_USERNAME }}
-      
       - name: Setup and push to data branch
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"

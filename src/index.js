@@ -84,6 +84,7 @@ async function run() {
     const githubStatsPath = path.join(dataDir, 'github-stats.json');
     saveJson(githubStatsPath, githubStats);
 
+    // let's generate some stat cards for the github stats: total contributions, total PRs merged, total stars gained, total forks
     const contributionsCardBuffer = await createGithubStatsCard({
       value: githubStats.contributions.total,
       descriptionOne: 'Contributions', 
@@ -125,10 +126,10 @@ async function run() {
     const forksCardPath = path.join(dataDir, `forks-card.svg`);
     saveChart(forksCardBuffer, forksCardPath);
 
+    // let's generate an area chart for the github stats: total views
     const trafficChartBuffer = await createlineChart(githubStats.topRepositories.slice(0, 5));
     const trafficChartPath = path.join(dataDir, `traffic-chart.svg`);
     saveChart(trafficChartBuffer, trafficChartPath);
-
   
   } catch (error) {
     console.error(error);
