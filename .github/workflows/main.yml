@@ -1,4 +1,4 @@
-name: Update Wakapi Stats
+name: Update Readme Stats
 on:
   push:
     branches: [ main ]
