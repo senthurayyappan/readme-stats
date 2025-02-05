@@ -90,6 +90,8 @@ If you notice that the actions fail or the stats aren't rendering right as soon 
 
 ### Step 2: 🎯 Choose Your Stats Level
 
+---
+
 #### Option A: ⭐ Basic GitHub Stats (Simple Setup)
 
 If you want to display your GitHub activity (stars, contributions, PRs, etc.), follow these steps:
@@ -104,6 +106,8 @@ If you want to display your GitHub activity (stars, contributions, PRs, etc.), f
      - `user`
      - `read:org` (under `admin:org` if you wish to fetch organization repositories)
 
+---
+
 #### Option B: 📊 Detailed Coding Stats (Full Setup)
 
 For comprehensive stats including coding time and language usage:
@@ -116,6 +120,8 @@ For comprehensive stats including coding time and language usage:
    - `GH_TOKEN`: Generate from [GitHub Settings → Developer Settings → Personal Access Tokens](https://github.com/settings/tokens).
    - `WAKAPI_USERNAME`: Your Wakapi username.
    - `WAKAPI_TOKEN`: Retrieve this from your Wakapi settings.
+
+---
 
 ### Step 3: 🎉 Finalize Your Setup
 
