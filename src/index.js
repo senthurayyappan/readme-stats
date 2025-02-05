@@ -15,6 +15,7 @@ async function run() {
     // Get inputs from environment variables with fallback to config
     const apiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
     const username = process.env.WAKAPI_USERNAME || config.wakapiUsername;
+    const githubUsername = process.env.GITHUB_USERNAME || config.githubUsername;
     const githubToken = process.env.GITHUB_TOKEN || config.githubToken;
     const intervals = config.intervals;
 
@@ -80,7 +81,7 @@ async function run() {
     }
 
     // Fetch GitHub stats
-    const githubStats = await getUserGitHubStats(githubToken);
+    const githubStats = await getUserGitHubStats(githubUsername, githubToken);
     const githubStatsPath = path.join(dataDir, 'github-stats.json');
     saveJson(githubStatsPath, githubStats);
 
@@ -132,7 +133,7 @@ async function run() {
     saveChart(trafficChartBuffer, trafficChartPath);
   
   } catch (error) {
-    console.error(error);
+    console.error("Error generating stats:", error);
     process.exit(1);
   }
 }

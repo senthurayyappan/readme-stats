@@ -56,18 +56,14 @@ const getRepositoryTraffic = async (owner, repo, octokit) => {
   }
 };
 
-const getUserGitHubStats = async (accessToken) => {
+const getUserGitHubStats = async (username, accessToken) => {
   if (!accessToken) {
     throw new Error('Access token is required');
   }
 
   const octokit = github.getOctokit(accessToken);
   try {
-    // Fetch the authenticated user's information
-    const authUserResponse = await octokit.rest.users.getAuthenticated();
-    const username = authUserResponse.data.login;
-
-    // Proceed with the existing logic using the retrieved username
+    // Fetch the specified user's information
     const userResponse = await octokit.rest.users.getByUsername({ username });
     const createdAt = new Date(userResponse.data.created_at);
     const startYear = createdAt.getFullYear();

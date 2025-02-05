@@ -3,7 +3,8 @@ require('dotenv').config();
 exports.config = {
   wakapiToken: process.env.WAKAPI_TOKEN,
   wakapiUsername: process.env.WAKAPI_USERNAME,
-  githubToken: process.env.GH_TOKEN,
+  githubToken: process.env.GITHUB_TOKEN,
+  githubUsername: process.env.GITHUB_USERNAME,
   intervals: ['all_time', 'last_7_days'],
   intervalLabels: {
     all_time: 'All Time',
