@@ -14,17 +14,16 @@ async function run() {
   try {
     // Get inputs from environment variables with fallback to config
     const wakapiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
-    const wakapiUsername = process.env.WAKAPI_USERNAME || config.wakapiUsername;
-    const githubUsername = process.env.USERNAME || config.githubUsername;
-    const githubToken = process.env.GITHUB_TOKEN || config.githubToken;
+    const githubUsername = process.env.WAKAPI_USERNAME || config.wakapiUsername;
+    const githubToken = process.env.GH_TOKEN || config.githubToken;
     const intervals = config.intervals;
 
     const dataDir = ensureDataDir(path.join(__dirname, '..'));
 
     let wakapiStatsGenerated = false;
-    if (wakapiKey && wakapiUsername) {
+    if (wakapiKey && githubUsername) {
       try {
-        const data = await fetchWakapiUserStats(wakapiKey, wakapiUsername, intervals);
+        const data = await fetchWakapiUserStats(wakapiKey, githubUsername, intervals);
         
         if (data) {
           for (const interval of intervals) {
@@ -81,9 +80,10 @@ async function run() {
     }
 
     // Fetch GitHub stats
-    const githubStats = await getUserGitHubStats(githubUsername, githubToken);
+    const githubStats = await getUserGitHubStats(githubToken);
     const githubStatsPath = path.join(dataDir, 'github-stats.json');
     saveJson(githubStatsPath, githubStats);
+
 
     // let's generate some stat cards for the github stats: total contributions, total PRs merged, total stars gained, total forks
     const contributionsCardBuffer = await createGithubStatsCard({

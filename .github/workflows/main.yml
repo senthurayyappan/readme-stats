@@ -38,10 +38,10 @@ jobs:
           node src/index.js
           echo "Stats generation completed."
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WAKAPI_TOKEN: ${{ secrets.WAKAPI_TOKEN }}
           WAKAPI_USERNAME: ${{ secrets.WAKAPI_USERNAME }}
-          USERNAME: ${{ secrets.USERNAME }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_USERNAME: ${{ secrets.GH_USERNAME }}
 
       - name: Setup Git Configuration
         run: |
@@ -84,5 +84,3 @@ jobs:
           echo "Pushing changes to 'data' branch..."
           git push origin data --force
           echo "Changes pushed successfully."
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
