@@ -11,8 +11,6 @@ on:
 jobs:
   update_stats:
     runs-on: ubuntu-latest
-    # Skip if the push was from github-actions bot
-    if: github.actor != 'github-actions[bot]'
     permissions:
       contents: write
     steps:
