@@ -56,14 +56,18 @@ const getRepositoryTraffic = async (owner, repo, octokit) => {
   }
 };
 
-const getUserGitHubStats = async (username, accessToken) => {
-  if (!username || !accessToken) {
-    throw new Error('Username and access token are required');
+const getUserGitHubStats = async (accessToken) => {
+  if (!accessToken) {
+    throw new Error('Access token is required');
   }
 
   const octokit = github.getOctokit(accessToken);
   try {
-    // First get user data to determine account creation year
+    // Fetch the authenticated user's information
+    const authUserResponse = await octokit.rest.users.getAuthenticated();
+    const username = authUserResponse.data.login;
+
+    // Proceed with the existing logic using the retrieved username
     const userResponse = await octokit.rest.users.getByUsername({ username });
     const createdAt = new Date(userResponse.data.created_at);
     const startYear = createdAt.getFullYear();
@@ -232,7 +236,7 @@ const getUserGitHubStats = async (username, accessToken) => {
     };
   } catch (error) {
     if (error.status === 404) {
-      throw new Error(`GitHub user ${username} not found`);
+      throw new Error(`GitHub user not found`);
     }
     if (error.status === 401) {
       throw new Error('Invalid GitHub access token');

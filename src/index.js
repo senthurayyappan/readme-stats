@@ -15,7 +15,7 @@ async function run() {
     // Get inputs from environment variables with fallback to config
     const apiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
     const username = process.env.WAKAPI_USERNAME || config.wakapiUsername;
-    const githubToken = process.env.GH_TOKEN || config.githubToken;
+    const githubToken = process.env.GITHUB_TOKEN || config.githubToken;
     const intervals = config.intervals;
 
     const dataDir = ensureDataDir(path.join(__dirname, '..'));
@@ -80,7 +80,7 @@ async function run() {
     }
 
     // Fetch GitHub stats
-    const githubStats = await getUserGitHubStats('senthurayyappan', githubToken);
+    const githubStats = await getUserGitHubStats(githubToken);
     const githubStatsPath = path.join(dataDir, 'github-stats.json');
     saveJson(githubStatsPath, githubStats);
 
