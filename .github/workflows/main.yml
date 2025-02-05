@@ -41,6 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WAKAPI_TOKEN: ${{ secrets.WAKAPI_TOKEN }}
           WAKAPI_USERNAME: ${{ secrets.WAKAPI_USERNAME }}
+          USERNAME: ${{ secrets.USERNAME }}
 
       - name: Setup Git Configuration
         run: |

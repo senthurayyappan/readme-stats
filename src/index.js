@@ -13,18 +13,18 @@ const { GITHUB_LIGHT_GREEN, GITHUB_WHITE, GITHUB_BLUE } = require('./charts/conf
 async function run() {
   try {
     // Get inputs from environment variables with fallback to config
-    const apiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
-    const username = process.env.WAKAPI_USERNAME || config.wakapiUsername;
-    const githubUsername = process.env.GITHUB_USERNAME || config.githubUsername;
+    const wakapiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
+    const wakapiUsername = process.env.WAKAPI_USERNAME || config.wakapiUsername;
+    const githubUsername = process.env.USERNAME || config.githubUsername;
     const githubToken = process.env.GITHUB_TOKEN || config.githubToken;
     const intervals = config.intervals;
 
     const dataDir = ensureDataDir(path.join(__dirname, '..'));
 
     let wakapiStatsGenerated = false;
-    if (apiKey && username) {
+    if (wakapiKey && wakapiUsername) {
       try {
-        const data = await fetchWakapiUserStats(apiKey, username, intervals);
+        const data = await fetchWakapiUserStats(wakapiKey, wakapiUsername, intervals);
         
         if (data) {
           for (const interval of intervals) {
